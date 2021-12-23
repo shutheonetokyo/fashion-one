@@ -1,0 +1,340 @@
+/* コードの文字化けを防ぐ */
+
+@charset "UTF-8";
+
+/* Bootstrapの追加 */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* 共通部分 */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  max-width: 100%;
+}
+
+/* モバイル版 
+
+@media (max-width: 600px) {
+  .main-nav {
+
+  }
+}
+*/
+
+/* _header */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  white-space: nowrap;
+}
+
+.wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+#logo {
+  margin-top: 10px;
+  font-size: 1.7em;
+  color: black;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: white;
+}
+
+.main-nav {
+  margin-top: 10px;
+  display: flex;
+  font-size: 1.0rem;
+  list-style: none;
+  a{
+    color: white;
+  }
+  li {
+  margin-left: 36px;
+  }
+}
+
+.nav-like{
+  margin-right: 10px;
+}
+
+
+/* static_pages home */
+
+
+/* 背景画像 */
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+
+#home {
+  background: linear-gradient(#de4d4d, #f5a500);
+  min-height: 60vh;
+}
+
+.center {
+  text-align: center;
+  margin-top: 100px;
+  white-space: nowrap;
+  h1 {
+    font-size: 4em;
+    letter-spacing: -1px;
+    font-family: "メイリオ" ;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+
+  }
+  h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  text-align: center;
+  font-weight: normal;
+  color: white;
+  }
+}
+
+/* area */
+
+.area {
+  padding: 32px;
+  white-space: nowrap;
+  h1 {
+    text-align:left;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  table {
+    border-radius: 4px;
+    border-collapse: separate;  /* 表の線と線の間を空ける */
+    border-spacing: 20px;       /* 表の線と線の間の幅 */
+    font-weight:  bold;         /* 文字の太さ指定 */
+    table-layout: auto;        /* セルの幅計算指定 */
+    text-align:center;
+    border: solid 1px;          /* 枠線指定 */
+  }
+  th {
+    width:  150px;              /* 幅指定 */
+    height: 16px;               /* 高さ指定 */
+    font-size: 26px;
+    padding: 8px;
+  }
+  td {
+    border-radius: 4px;
+    border: solid 1px;          /* 枠線指定 */
+    padding: 30px;      /* 余白指定 */
+    width:  150px;              /* 幅指定 */
+    height: 80px;               /* 高さ指定 */
+    font-size: 20px;
+  }
+}
+
+
+/* genre */
+
+.genre {
+  padding: 32px;
+  h1 {
+    text-align:left;
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+
+.genre-images {
+  display: flex;
+  width: 150%;
+}
+
+.genre-images-list {
+  position: relative;/*相対配置*/
+  width: 200px;
+  margin-left: 10px;
+  :hover {
+    opacity: 0.8;
+  }
+}
+
+.genre-images-list p {
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  font-weight: bold; /*太字に*/
+  font-size: 16px;/*サイズ2倍*/
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+}
+
+.genre-images-list img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+/* brand */
+
+.brand {
+  padding: 32px;
+  h1 {
+    text-align:left;
+    font-size: 24px;
+  }
+}
+
+.brand-images {
+  display: flex;
+  width: 170%;
+}
+
+.brand-images-list {
+  position: relative;/*相対配置*/
+  width: 180px;
+  margin-right: 4px;
+  :hover {
+    opacity: 0.5;
+  }
+}
+
+.brand-images-list p {
+  position: absolute;/*絶対配置*/
+  color: black;/*文字は白に*/
+  font-weight: bold; /*太字に*/
+  font-size: 16px;/*サイズ2倍*/
+}
+
+.brand-images-list img {
+  border-radius: 5px;
+  width: 80%;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid;
+  color: gray;
+  a {
+    color: gray;
+    &:hover {
+      color: gray;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 10%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+
+/* スマホのレスポンシブ対応 */
+
+/* @media (max-width 600px) */

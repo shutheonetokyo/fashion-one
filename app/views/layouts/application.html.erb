@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>FashionOne</title>
-    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <title>FASHION-ONE</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <body>  
-    自動デプロイの確認  
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 
+    'data-turbolinks-track': 'reload' %>
+
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>
