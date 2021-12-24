@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'bcrypt',         '3.1.13'
+gem 'activeadmin'
+gem 'devise'
 gem 'faker',                   '2.1.2'
 gem 'rails-i18n', '~> 6.0'
 gem 'enum_help'
