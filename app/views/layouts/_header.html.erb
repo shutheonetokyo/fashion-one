@@ -3,11 +3,19 @@
     <%= link_to "FASHION-ONE", root_path, id: "logo" %>
       <nav>
         <ul class="main-nav">
-          <li class ="nav-like"><%= "保存済み" %></li>
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">アカウント</a>
-            </div>
-          </li>
+          <% if user_signed_in? %>
+            <li class ="nav-like"><%= link_to "保存済み", root_path %></li>
+                    <li><%= link_to "プロフィール", root_path %></li>
+                    <li><%= link_to "設定", edit_user_registration_path %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %></li>
+                  <% else %>
+                    <li><%= link_to "保存済み", root_path %></li>
+                    <li><%= link_to "会員登録", new_user_registration_path %></li>
+                    <li><%= link_to "ログイン", new_user_session_path %></li>
+                  <% end %>
+                  </div>
+              </div>
+            </li>
         </ul>
       </nav>
   </header>
