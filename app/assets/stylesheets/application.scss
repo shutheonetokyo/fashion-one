@@ -29,7 +29,32 @@ body {
 
 /* _header */
 
-.page-header {
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  white-space: nowrap;
+  background: linear-gradient(#de4d4d, #f5a500);
+  min-height: 8vh;
+}
+
+.header-nav {
+  margin-top: 10px;
+  display: flex;
+  font-size: 1.0rem;
+  list-style: none;
+  a{
+    color: white;
+  }
+  li {
+  margin-left: 36px;
+  }
+}
+
+
+/* static_pages home */
+
+.home {
   display: flex;
   justify-content: space-between;
   border: none;
@@ -37,7 +62,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1250px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 4%;
 }
@@ -45,7 +70,6 @@ body {
 #logo {
   margin-top: 10px;
   font-size: 1.7em;
-  color: black;
   letter-spacing: -1px;
   font-weight: bold;
   color: white;
@@ -68,15 +92,7 @@ body {
   margin-right: 10px;
 }
 
-
-/* static_pages home */
-
-
 /* 背景画像 */
-.big-bg {
-  background-size: cover;
-  background-position: center top;
-}
 
 #home {
   background: linear-gradient(#de4d4d, #f5a500);
@@ -86,6 +102,12 @@ body {
 #home .page-title {
   text-transform: none;
 }
+
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+
 
 .center {
   text-align: center;

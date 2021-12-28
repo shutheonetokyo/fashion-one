@@ -1,24 +1,17 @@
-<div id="home" class="big-bg">
-  <header class="page-header wrapper">
-    <%= link_to "FASHION-ONE", root_path, id: "logo" %>
-      <nav>
-        <ul class="main-nav">
-          <% if user_signed_in? %>
-            <li class ="nav-like"><%= link_to "保存済み", root_path %></li>
-            <li><%= link_to "プロフィール", root_path %></li>
-            <li><%= link_to "設定", edit_user_registration_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %></li>
-          <% else %>
-            <li><%= link_to "保存済み", root_path %></li>
-            <li><%= link_to "会員登録", new_user_registration_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-  </header>
-
-  <div class="center">
-    <h1>洋服探しはFASHION-ONEで</h1>
-    <h2>好きな洋服のジャンル、お店の地域を選び、あなたにぴったりのお店を探そう</h2>
-  </div>
-</div><!-- /#home -->
+<header class="header wrapper">
+  <%= link_to "FASHION-ONE", root_path, id: "logo" %>
+    <nav>
+      <ul class="header-nav">
+        <% if user_signed_in? %>
+          <li class ="nav-like"><%= link_to "保存済み", root_path %></li>
+          <li><%= link_to "プロフィール", root_path %></li>
+          <li><%= link_to "設定", edit_user_registration_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %></li>
+        <% else %>
+          <li><%= link_to "保存済み", root_path %></li>
+          <li><%= link_to "会員登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+</header>
