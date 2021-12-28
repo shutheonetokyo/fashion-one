@@ -9,11 +9,11 @@ ja:
     created_at: 作成日時
     updated_at: 更新日時
   activerecord:
-      models:
-        user: ユーザー
-      attributes:
-        user:
-          name: 名前
-          email: メールアドレス
-          self_introduction: 自己紹介文
-          image: プロフィール画像
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        self_introduction: 自己紹介文
+        image: プロフィール画像
