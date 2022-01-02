@@ -12,7 +12,6 @@ gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'enum_help'
 gem 'carrierwave', '~> 2.0'
-gem 'bootstrap-sass', '3.4.1'
 gem "pg", "~> 1.1"
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
