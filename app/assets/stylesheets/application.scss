@@ -170,7 +170,7 @@ footer {
   color: grey;
   text-align: center;
   p {
-    font-size: 20px;
+    font-size: 16px;
     padding-top: 24px;
   }
 }
@@ -185,9 +185,9 @@ main {
   flex: 1;
 }
 
-/* アカウント登録 */
+/* 会員登録画面 */
 
-.registration {
+.registration-form {
   margin: 0 150px;
 }
 
@@ -197,17 +197,25 @@ main {
   text-align: center;
 }
 
-.registration-button {
+.login-link {
+  margin-top: 10px;
+}
+
+/* ログイン画面 */
+
+.login-form {
+  margin: 0 150px;
+}
+
+.login-title {
+  margin: 30px 0;
+  font-weight: bold;
   text-align: center;
-  margin-top: 20px;
 }
 
-
-.login-button {
-  margin-top: 20px;
+.registration-link {
+  margin-top: 10px;
 }
-
-
 
 /* _header(仮) 
 
