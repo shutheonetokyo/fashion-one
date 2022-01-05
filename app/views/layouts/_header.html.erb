@@ -5,7 +5,7 @@
       <div class="navbar-nav">
         <% if user_signed_in? %>
           <%= link_to "保存済み", root_path, class: "nav-item nav-link text-white" %>
-          <%= link_to "プロフィール", root_path, class: "nav-item nav-link text-white" %>
+          <%= link_to "マイページ", current_user, class: "nav-item nav-link text-white" %>
           <%= link_to "設定", edit_user_registration_path, class: "nav-item nav-link text-white" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav-item nav-link text-white" %>
         <% else %>
