@@ -239,27 +239,34 @@ main {
   margin-top: 10px;
 }
 
+/* フラッシュメッセージ */
 
-
-
-
-
-/* _header(仮) 
-
-.navbar {
-  background: linear-gradient(#de4d4d, #f5a500);
+.notice {
+  text-align: center;
+  background-color: #F0FFF0;
+  color: #66CDAA;
+  padding: 20px 0;
 }
 
-#logo {
-  font-size: 1.7em;
-  color: black;
-  letter-spacing: -1px;
-  font-weight: bold;
-  color: white;
+/* エラーメッセージ */
+
+.alert {
+  text-align: center;
+  background-color: #FFF0F5;
+  color: #d65f4c;
+  padding: 20px 0;
 }
 
-.navbar-nav {
-  font-weight: bold;
+/* エラーメッセージ(ユーザー編集時) */
+
+.error-message {
+  background-color: #FFF0F5;
+  color: #d65f4c;
+  padding: 10px 10px;
 }
 
-*/
+/* ul,liのリストマーク(・)を消去 */
+
+li {
+  list-style: none;
+}
