@@ -33,15 +33,14 @@
 
 
     <div class="update-button">
-      <%= f.submit t('.update'),class:"btn btn-lg btn-secondary btn-block mt-3" %>
+      <%= f.submit t('.update'),class:"btn btn-lg btn-primary btn-block mt-3" %>
     </div>
   <% end %>
 
-  <h3 class="deletion-title"><%= t('.cancel_my_account') %></h3>
   <div class="deletion-button">
     <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class:"btn btn-lg btn-secondary btn-block mt-3" %>
   </div>
   <div class="back-mypage-link">
-    <%= link_to t('devise.shared.links.back'), :back %>
+    <%= link_to "マイページに戻る", current_user%>
   </div>
 </div>
