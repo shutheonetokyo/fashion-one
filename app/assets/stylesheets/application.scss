@@ -185,6 +185,14 @@ main {
   flex: 1;
 }
 
+
+/* 全体の入力フォームの余白 */
+
+.field {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 /* 会員登録画面 */
 
 .registration-form {
@@ -237,6 +245,14 @@ main {
 
 .back-mypage-link {
   margin-top: 10px;
+}
+
+.update-button {
+  text-align: center;
+}
+
+.deletion-button {
+  text-align: center;
 }
 
 
