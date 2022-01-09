@@ -13,6 +13,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+      user.name = "ゲストユーザー"
     end
   end
 end
