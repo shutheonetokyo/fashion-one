@@ -1,9 +1,10 @@
 ActiveAdmin.register User do
-  permit_params :name, :email, :self_introduction, :image
+  permit_params :name, :email, :password, :password_confirmation, :image
 
   index do
     selectable_column
     id_column
+    column :name
     column :email
     column :current_sign_in_at
     column :sign_in_count
@@ -20,8 +21,9 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :self_introduction
-      f.input :image
+      f.input :password
+      f.input :password_confirmation
+      f.input :image, :as => :file
     end
     f.actions
   end
