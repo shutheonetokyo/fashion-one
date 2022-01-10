@@ -11,9 +11,19 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      shop: ショップ
     attributes:
       user:
         name: 名前
         email: メールアドレス
         self_introduction: 自己紹介文
         image: プロフィール画像
+      shop:
+        name: 名前
+        address: 住所
+        TEL: 電話番号
+        access: 最寄り駅からの所要時間
+        image: 画像
+        shopping_hours: 営業時間
+        content: 紹介文
+        URL: URL
