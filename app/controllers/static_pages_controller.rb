@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   
-  PER_PAGE = 20
+  PER_PAGE = 10
 
   def home
     @q = Shop.ransack(params[:q])
