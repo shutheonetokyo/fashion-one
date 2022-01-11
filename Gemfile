@@ -14,6 +14,8 @@ gem 'enum_help'
 gem 'carrierwave', '~> 2.0'
 gem 'fog-aws'
 gem 'mini_magick'
+gem 'kaminari'
+gem 'ransack'
 gem "pg", "~> 1.1"
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
