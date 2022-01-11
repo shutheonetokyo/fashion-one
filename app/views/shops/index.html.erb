@@ -1,0 +1,24 @@
+<table>
+  <tbody>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>住所</th>
+      </tr>
+    </thead>
+
+    <% if @shops.present? %>
+      <% @shops.each do |shop| %>
+        <tr>
+          <td><%= shop.name %></td>
+          <td><%= shop.address %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>検索結果はありません</p>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= paginate @shops %>

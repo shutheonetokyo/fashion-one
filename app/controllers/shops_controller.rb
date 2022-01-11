@@ -1,6 +1,10 @@
 class ShopsController < ApplicationController
 
-  def show
-    @shop = Shop.find(params[:id])
+  PER_PAGE = 20
+
+  def index
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result.page(params[:page]).per(PER_PAGE)
   end
+
 end
