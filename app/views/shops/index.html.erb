@@ -1,24 +1,15 @@
-<table>
-  <tbody>
-    <thead>
-      <tr>
-        <th>名前</th>
-        <th>住所</th>
-      </tr>
-    </thead>
-
-    <% if @shops.present? %>
-      <% @shops.each do |shop| %>
-        <tr>
-          <td><%= shop.name %></td>
-          <td><%= shop.address %></td>
-        </tr>
+<div class="shop-list">
+  <p><%= @shops.length%>件ヒットしました。</p>
+  <% if @shops.present? %>
+    <% @shops.each do |shop| %>
+      <%= link_to shop do %>
+        <p><%= shop.name %></p>
+        <p><%= shop.address %></p>
       <% end %>
-    <% else %>
-      <p>検索結果はありません</p>
     <% end %>
-
-  </tbody>
-</table>
+  <% else %>
+    <p>検索結果は見つかりませんでした。</p>
+  <% end %>
+</div>
 
 <%= paginate @shops %>
