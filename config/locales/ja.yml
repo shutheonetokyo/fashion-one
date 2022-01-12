@@ -12,6 +12,7 @@ ja:
     models:
       user: ユーザー
       shop: ショップ
+      area: エリア
     attributes:
       user:
         name: 名前
@@ -27,3 +28,5 @@ ja:
         shopping_hours: 営業時間
         content: 紹介文
         URL: URL
+      area:
+        name: 名前
