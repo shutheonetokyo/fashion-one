@@ -1,6 +1,6 @@
 <div class="shop-list">
-  <p><%= @shops.length%>件ヒットしました。</p>
   <% if @shops.present? %>
+    <p><%= @shops.length%>件ヒットしました。</p>
     <% @shops.each do |shop| %>
       <%= link_to shop do %>
         <p><%= shop.name %></p>

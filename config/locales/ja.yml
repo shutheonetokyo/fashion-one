@@ -28,5 +28,6 @@ ja:
         shopping_hours: 営業時間
         content: 紹介文
         URL: URL
+        area_id: エリア
       area:
         name: 名前

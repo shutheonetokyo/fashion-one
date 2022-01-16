@@ -5,6 +5,7 @@ ActiveAdmin.register Shop do
     selectable_column
     id_column
     column :name
+    column :area
     column :address
     column :TEL
     column :access
