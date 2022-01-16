@@ -31,6 +31,23 @@
     <div class="card-body">
       <h1>東京</h1>
       <p class="card-text">
+        <% @areas.each do |area| %>
+          <%= link_to area.name, shops_path(q: { area_id_eq: area.id}), class: 'btn  btn-outline-secondary btn-lg m-3' %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+<div class="area">
+  <h1>エリアから探す</h1>
+  <div class="card ml-3" style="width: 90%">
+    <div class="card-body">
+      <h1>東京</h1>
+      <p class="card-text">
         <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
         <%= link_to "原宿", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
         <%= link_to "表参道", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
@@ -51,6 +68,8 @@
     </div>
   </div>
 </div>
+-->
+
 
 <!-- static_pages genre -->
 
