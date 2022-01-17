@@ -2,4 +2,5 @@ class Shop < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   belongs_to :area
+  belongs_to :genre
 end
