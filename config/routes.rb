@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :users
   resources :shops
   resources :areas
+  resources :genres
 end

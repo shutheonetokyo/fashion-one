@@ -40,78 +40,18 @@
 </div>
 
 
-
-<!--
-<div class="area">
-  <h1>エリアから探す</h1>
-  <div class="card ml-3" style="width: 90%">
-    <div class="card-body">
-      <h1>東京</h1>
-      <p class="card-text">
-        <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "原宿", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "表参道", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "代官山", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "中目黒", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "新宿", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "代々木", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "中野", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "高円寺", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "吉祥寺", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "池袋", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "六本木", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "有楽町", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "銀座", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "東京", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-        <%= link_to "錦糸町", root_path, class: 'btn  btn-outline-secondary btn-lg m-3'%>
-      </p>
-    </div>
-  </div>
-</div>
--->
-
-
 <!-- static_pages genre -->
 
 <h1 class="genre-title">ジャンルから探す</h1>
 <div class="genre">
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("fastfashion.jpeg", class:"genre-image") %>
-      <p class="genre-name">ファストファッション</p>
+  <p class="genre-list">
+    <% @genres.each do |genre| %>
+      <%= link_to genre.name, shops_path(q: { genre_id_eq: genre.id}), class: 'btn btn-outline-secondary btn-lg'%>
     <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("selectshop.jpeg", class:"genre-image") %>
-      <p class="genre-name">セレクトショップ</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("street.jpeg", class:"genre-image") %>
-      <p class="genre-name">ストリートファッション</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("modefashion.jpeg", class:"genre-image") %>
-      <p class="genre-name">モードファッション</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("luxury.jpeg", class:"genre-image") %>
-      <p class="genre-name">ラグジュアリー</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("vintage.jpeg", class:"genre-image") %>
-      <p class="genre-name">ヴィンテージ</p>
-    <% end %>
-  </div>
+  </p>
 </div>
+
+
 
 <!-- static_pages brand -->
 
