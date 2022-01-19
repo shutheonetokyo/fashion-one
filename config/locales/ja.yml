@@ -13,6 +13,7 @@ ja:
       user: ユーザー
       shop: ショップ
       area: エリア
+      genre: ジャンル
     attributes:
       user:
         name: 名前
@@ -28,6 +29,9 @@ ja:
         shopping_hours: 営業時間
         content: 紹介文
         URL: URL
-        area_id: エリア
+        area: エリア
+        genre: ジャンル
       area:
+        name: 名前
+      genre:
         name: 名前
