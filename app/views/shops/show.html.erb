@@ -2,3 +2,10 @@
 <p><%= @shop.name %></p>
 <p><%= @shop.address %></p>
 <p><%= @shop.area.name %></p>
+<p>
+  <% if @shop.liked_by?(current_user) %>
+    <%= render "like", shop: @shop %>
+  <% else %>
+    <%= render "dislike", shop: @shop %>
+  <% end %>
+</p>

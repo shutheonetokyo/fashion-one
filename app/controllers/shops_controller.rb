@@ -6,7 +6,6 @@ class ShopsController < ApplicationController
     @q = Shop.ransack(params[:q])
     @shops = @q.result.page(params[:page]).per(PER_PAGE)
     @areas = Area.find(params[:q][:area_id_eq])
-    @genres = Genre.find(params[:q][:genre_id_eq])
   end
 
   def show
@@ -16,7 +15,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id, :genre_id)
+    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id)
   end
 
 end

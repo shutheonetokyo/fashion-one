@@ -40,19 +40,6 @@
 </div>
 
 
-<!-- static_pages genre -->
-
-<h1 class="genre-title">ジャンルから探す</h1>
-<div class="genre">
-  <p class="genre-list">
-    <% @genres.each do |genre| %>
-      <%= link_to genre.name, shops_path(q: { genre_id_eq: genre.id}), class: 'btn btn-outline-secondary btn-lg'%>
-    <% end %>
-  </p>
-</div>
-
-
-
 <!-- static_pages brand -->
 
 <h1 class="brand-title">ブランドから探す</h1>
