@@ -2,6 +2,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :self_introduction, length: { maximum: 500 }
+
+  has_many :likes, dependent: :destroy
+  has_many :liked_shops, through: :likes, source: :shop
   
   mount_uploader :image, ImageUploader
 

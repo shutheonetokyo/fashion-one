@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :users
-  resources :shops
+
   resources :areas
-  resources :genres
+  
+  resources :shops do
+    resource :likes, only: [:create, :destroy]
+  end
 end
