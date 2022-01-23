@@ -1,1 +1,2 @@
-<%= link_to "★", shop_likes_path(shop), method: :delete %>
+<%= link_to "★", shop_likes_path(shop), method: :delete, remote: true %>
+<%= shop.likes_count %>
