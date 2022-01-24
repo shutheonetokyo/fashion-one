@@ -5,7 +5,8 @@ class User < ApplicationRecord
 
   has_many :likes, dependent: :destroy
   has_many :liked_shops, through: :likes, source: :shop
-  
+  has_many :reviews, dependent: :destroy
+
   mount_uploader :image, ImageUploader
 
   devise :database_authenticatable, :registerable,
