@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @review = Review.new
   end
 
   private
