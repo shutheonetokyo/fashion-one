@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+  before_action :set_review
 
   PER_PAGE = 10
 
@@ -17,6 +18,10 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id)
+  end
+
+  def set_review
+    @reviews=Review.where(shop_id: @shop)
   end
 
 end
