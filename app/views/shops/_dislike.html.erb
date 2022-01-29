@@ -1,2 +1,5 @@
-<%= link_to "☆", shop_likes_path(shop), method: :post, remote: true %>
-<%= shop.likes_count %>
+<%= link_to shop_likes_path(shop),method: :post, remote: true, class:"btn clip_btn" do  %>
+  <i class="far fa-bookmark"></i>保存
+<% end %>
+
+<%= shop.likes_count %>件
