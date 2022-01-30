@@ -6,14 +6,19 @@ Rails.application.routes.draw do
     passwords: "users/passwords"
   }
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_scope :user do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
   
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
-  resources :users
+  resources :users, only: [:show] do
+    collection do
+      get :likes
+      get :shops
+    end
+  end
 
   resources :areas
   

@@ -1,3 +1,33 @@
-<p><%= @user.name %><%= @user.email %></p>
-
+<p><%= @user.name %></p>
+<p><%= @user.email %></p>
 <p><%= image_tag @user.image.url %></p>
+
+
+<div class="cover-user-show">
+  <p>保存済みのお店一覧</p>
+  <% current_user.liked_shops.each do |shop| %>
+    <%= link_to shop do %>
+      <p><%= shop.name %></p>
+      <p><%= shop.address %></p>
+      <p><%= shop.area.name %></p>
+      <p class="fas fa-comment-dots"><%= shop.reviews.count %>件</p>
+      <p class="fas fa-bookmark"><%= shop.likes.count %>件</p>
+    <% end %>
+    <div class="average-score" data-score=<%= shop.average_score %>></div>
+    <script>
+      $('.average-score').empty();
+        $('.average-score').raty({
+          readOnly: true,
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          score: function() {
+            return $(this).attr('data-score')
+          }
+        });
+    </script>
+      <p><%= shop.average_score %></p>
+  <% end %>
+</div>
+
+
