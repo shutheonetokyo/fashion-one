@@ -9,7 +9,7 @@ class Shop < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   def liked_by?(user)
-    likes.exists?(user_id: user.id)
+    likes.find_by(user_id: user&.id).present?
   end
 
   def average_score

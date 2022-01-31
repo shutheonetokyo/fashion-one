@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user! ,except: :index
 
   def index
     @shop = Shop.find(params[:shop_id])
@@ -6,13 +7,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
+    @review = current_user.reviews.new(review_params)
     if @review.save
-      redirect_to shop_reviews_path(@review.shop)
+      redirect_back(fallback_location: root_path, notice: "口コミを投稿しました")
     else
-      @shop = Shop.find(params[:shop_id])
-      render "shops/show"
+      redirect_back(fallback_location: root_path, alert: "口コミの投稿に失敗しました")
     end
   end
 
