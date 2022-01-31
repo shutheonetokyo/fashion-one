@@ -5,6 +5,8 @@
   <div class=card>
     <p><%= review.user.name %></p>
 
+    <%= link_to "削除", shop_review_path(@shop, review), method: :delete, data: { confirm: "削除しますか？" } %>
+
     <div id="star-score<%= review.id%>"></div>    
     <script>
       $('#star-score<%= review.id%>').empty();

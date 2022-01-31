@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get :likes
-      get :shops
+      get :reviews
     end
   end
 
@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   
   resources :shops do
     resource :likes, only: [:create, :destroy]
-    resources :reviews, only: [:index, :create]
+    resources :reviews, only: [:index, :create, :edit, :destroy]
   end
 end
