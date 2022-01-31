@@ -16,8 +16,24 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def destroy    
+    @shop = Shop.find(params[:shop_id])
+    review = @shop.reviews.find(params[:id])
+    if current_user.id == review.user.id
+      review.destroy
+      redirect_back(fallback_location: root_path, notice: "口コミを削除しました")
+    else
+      render "shops/show"
+    end
+  end
+
   private
+
   def review_params
-    params.require(:review).permit(:shop_id, :score, :title, :content)
+    params.require(:review).permit(:user_id, :shop_id, :score, :title, :content)
   end
 end
