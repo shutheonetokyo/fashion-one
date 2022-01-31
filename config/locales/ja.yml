@@ -15,6 +15,7 @@ ja:
       area: エリア
       genre: ジャンル
       like: 保存済み
+      review: 口コミ
     attributes:
       user:
         name: 名前
@@ -39,4 +40,7 @@ ja:
       like:
         user: ユーザー
         shop: ショップ
-
+      review:
+        score: 評価
+        title: タイトル
+        content: 内容

@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+  
 
   PER_PAGE = 10
 

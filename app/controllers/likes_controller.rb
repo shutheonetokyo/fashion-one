@@ -1,12 +1,20 @@
 class LikesController < ApplicationController
   
   def create
-    current_user.likes.create!(shop_id: params[:shop_id])
-    @shop = Shop.find(params[:shop_id])
+    if user_signed_in?
+      current_user.likes.create!(shop_id: params[:shop_id])
+      @shop = Shop.find(params[:shop_id])      
+    else
+      redirect_back(fallback_location: root_path, alert: "ログインもしくはアカウント登録してください。")
+    end
   end
 
   def destroy
-    current_user.likes.find_by(shop_id: params[:shop_id]).destroy!
-    @shop = Shop.find(params[:shop_id])
+    if user_signed_in?
+      current_user.likes.find_by(shop_id: params[:shop_id]).destroy!
+      @shop = Shop.find(params[:shop_id])
+    else
+      redirect_back(fallback_location: root_path, alert: "ログインもしくはアカウント登録してください。")
+    end
   end
 end  

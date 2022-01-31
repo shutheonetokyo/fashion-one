@@ -6,4 +6,3 @@ class Like < ApplicationRecord
     message: "は同じお店を2回以上保存済みにすることができません",
   }
 end
-
