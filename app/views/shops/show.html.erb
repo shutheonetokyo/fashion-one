@@ -26,6 +26,4 @@
 </script>
 <p><%= @shop.average_score %></p>
 
-<p>
-  <%= render 'reviews/form', review: @review, shop: @shop %>
-</p>
+<%= link_to '口コミを投稿する', new_shop_review_path(params[:id]) %>

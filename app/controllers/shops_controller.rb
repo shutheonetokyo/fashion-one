@@ -11,7 +11,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @review = Review.new
+    @reviews = Review.where(shop_id:params[:id])
   end
 
   private
