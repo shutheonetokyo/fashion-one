@@ -1,31 +1,44 @@
-<div class="shop-list">
+<div class="container">
   <% if @shops.present? %>
-    <p><%= @shops.length%>件ヒットしました。</p>
+    <h1 class="shop-list-count"><%= @shops.length%>件ヒットしました。</h1>
     <% @shops.each do |shop| %>
       <%= link_to shop do %>
-        <p><%= shop.name %></p>
-        <p><%= shop.address %></p>
-        <p><%= shop.area.name %></p>
-        <p class="fas fa-comment-dots"><%= shop.reviews.count %>件</p>
-        <p class="fas fa-bookmark"><%= shop.likes.count %>件</p>
+      <div class="card shop-list">
+        <div class="row">
+          <div class="col-lg-10 card-body shop-list-name">
+            <div class="shop-name"><%= shop.name %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 d-sm-block d-none shop-list-image">
+            <%= image_tag shop.image.url %>
+          </div>
+          <div class="col-lg-7 shop-list-A">
+            <div class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></div>
+            <div class="shop-access"><%= shop.access %></div>
+            <div class="average-score" data-score=<%= shop.average_score %>></div>
+            <script>
+              $('.average-score').empty();
+                $('.average-score').raty({
+                  readOnly: true,
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  score: function() {
+                    return $(this).attr('data-score')
+                  }
+                });
+            </script>
+            <div class="shop-average-score"><%= shop.average_score %></div>
+            <div class="fas fa-comment-dots"> <%= shop.reviews.count %> 件</div>
+            <div class="fas fa-bookmark"> <%= shop.likes.count %> 件</div>
+          </div>
+        </div>
+      </div>
       <% end %>
-      <div class="average-score" data-score=<%= shop.average_score %>></div>
-      <script>
-        $('.average-score').empty();
-          $('.average-score').raty({
-            readOnly: true,
-            starOn: "<%= asset_path('star-on.png') %>",
-            starOff: "<%= asset_path('star-off.png') %>",
-            starHalf: "<%= asset_path('star-half.png') %>",
-            score: function() {
-              return $(this).attr('data-score')
-            }
-          });
-      </script>
-      <p><%= shop.average_score %></p>
     <% end %>
   <% else %>
-    <p>検索結果は見つかりませんでした。</p>
+    <h1 class="shop-list-count">検索結果は見つかりませんでした。</h1>
   <% end %>
 </div>
 
