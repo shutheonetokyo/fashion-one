@@ -272,8 +272,6 @@ main {
   margin: 20px 0;
 }
 
-
-
 /* フラッシュメッセージ */
 
 .notice {
@@ -306,6 +304,24 @@ li {
   list-style: none;
 }
 
+
+/* shopページ 共通 */
+
+.shop-score {
+  max-width: 170px;
+}
+
+.shop-comment-like {
+  max-width: 150px;
+}
+
+.shop-like {
+  max-width: 200px;
+}
+
+
+
+
 /* shop一覧ページ */
 
 .shop-list-count {
@@ -315,37 +331,50 @@ li {
 }
 
 .shop-list {
+  padding-left: 20px;
+  padding-bottom: 20px;
   margin-bottom: 40px;
 }
 
-.shop-name {
+.shop-list-name {
   color: #1E90FF;
   font-size: 24px;
   font-weight: bold;
-}
-
-.shop-area-genre {
-  color:black;
-  font-size: 18px;
 }
 
 .shop-list-image {
   max-width: 240px;
 }
 
-.shop-access {
-  color:black;
+.shop-list-content {
+  margin-bottom: 10px;
+  color: black;
   font-size: 18px;
 }
 
-.shop-average-score {
+/* shop詳細ページ */
+
+.shop-show {
+}
+
+.shop-show-title {
+  margin-top: 40px;
+}
+
+.shop-show-name {
   color: black;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.fa-comment-dots {
-  color:black;
+.shop-show-score {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
 }
 
-.fa-bookmark {
-  color:black;
+.shop-show-average {
+  max-width: 100px;
+  font-size: 20px;
 }
+
