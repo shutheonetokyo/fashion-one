@@ -1,29 +1,50 @@
-<p>詳細</p>
-<p><%= @shop.name %></p>
-<p><%= @shop.address %></p>
-<p><%= @shop.area.name %></p>
+<div class="container">
+  <div class="mx-auto" style="max-width: 80%" >
+    <div class="row shop-show-title">
+      <div class="col-lg-8 shop-show-name">
+        <p><%= @shop.name %></p>
+      </div>
+      <div class="col-lg-2 shop-like">
+        <p id="shop-<%= @shop.id %>">
+          <% if @shop.liked_by?(current_user) %>
+            <%= render "like", shop: @shop %>
+          <% else %>
+            <%= render "dislike", shop: @shop %>
+          <% end %>
+        </p>
+      </div>
+    </div>
 
-<p id="shop-<%= @shop.id %>">
-  <% if @shop.liked_by?(current_user) %>
-    <%= render "like", shop: @shop %>
-  <% else %>
-    <%= render "dislike", shop: @shop %>
-  <% end %>
-</p>
+    <div class="row shop-show-score">
+      <div class="col-lg-3 shop-score">
+        <div class="average-score" data-score=<%= @shop.average_score %>><%= @shop.average_score %></div>
+        <script>
+          $('.average-score').empty();
+            $('.average-score').raty({
+              readOnly: true,
+              starOn: "<%= asset_path('star-on.png') %>",
+              starOff: "<%= asset_path('star-off.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              score: function() {
+                return $(this).attr('data-score')
+              }
+            });
+        </script>
+      </div>
+      <div class="col-lg-4 shop-show-average">
+        <p><%= @shop.average_score %></p>
+      </div>
+      <div class="col-lg-3 shop-show-count">
+        <div class="fas fa-comment-dots"> <%= @shop.reviews.count %> 件</div>
+        <div class="fas fa-bookmark"> <%= @shop.likes.count %> 件</div>
+      </div>
+    </div>
 
-<div class="average-score" data-score=<%= @shop.average_score %>></div>
-<script>
-  $('.average-score').empty();
-    $('.average-score').raty({
-      readOnly: true,
-      starOn: "<%= asset_path('star-on.png') %>",
-      starOff: "<%= asset_path('star-off.png') %>",
-      starHalf: "<%= asset_path('star-half.png') %>",
-      score: function() {
-        return $(this).attr('data-score')
-      }
-    });
-</script>
-<p><%= @shop.average_score %></p>
-
-<%= link_to '口コミを投稿する', new_shop_review_path(params[:id]) %>
+    <div class="row">
+      <div class="col-lg-10">
+        <p><%= @shop.area.name %> / <%= @shop.genre.name %></p>
+        <p><%= @shop.access %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,4 @@
-<%= link_to shop_likes_path(shop),method: :delete, remote: true, class:"btn clip_btn" do  %>
-  <i class="fas fa-bookmark"></i>保存
+<%= link_to shop_likes_path(shop),method: :delete, remote: true, class:"btn" do  %>
+  <i class="fas fa-bookmark like-btn"> 保存</i>
 <% end %>
 
-<%= shop.likes_count %>件

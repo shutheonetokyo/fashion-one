@@ -6,14 +6,14 @@
       <div class="card shop-list">
         <div class="row">
           <div class="col-lg-10 card-body shop-list-name">
-            <div class="shop-name"><%= shop.name %></div>
+            <p><%= shop.name %></p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 d-sm-block d-none shop-list-image">
             <%= image_tag shop.image.url %>
           </div>
-          <div class="col-lg-7 shop-list-A">
+          <div class="col-lg-7 shop-list-content">
             <div class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></div>
             <div class="shop-access"><%= shop.access %></div>
             <div class="average-score" data-score=<%= shop.average_score %>></div>
@@ -29,7 +29,7 @@
                   }
                 });
             </script>
-            <div class="shop-average-score"><%= shop.average_score %></div>
+            <div><%= shop.average_score %></div>
             <div class="fas fa-comment-dots"> <%= shop.reviews.count %> 件</div>
             <div class="fas fa-bookmark"> <%= shop.likes.count %> 件</div>
           </div>
