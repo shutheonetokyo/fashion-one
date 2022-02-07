@@ -1,1 +1,2 @@
 document.getElementById('shop-<%= @shop.id %>').innerHTML = '<%= j render("shops/like", shop: @shop) %>'
+document.getElementById('shopcount-<%= @shop.id %>').innerHTML = '<%= j render("shops/likes_count", shop: @shop) %>'
