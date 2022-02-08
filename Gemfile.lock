@@ -374,6 +374,7 @@ DEPENDENCIES
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
   jbuilder (~> 2.7)
+  jquery-rails
   kaminari
   listen (~> 3.3)
   mini_magick
