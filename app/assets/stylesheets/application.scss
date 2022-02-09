@@ -376,7 +376,7 @@ li {
 .row-shop-score {
   margin-bottom: 10px;
   padding-bottom: 5px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #DDDDDD;
 }
 
 .col-shop-average {
@@ -402,3 +402,14 @@ li {
   padding: 10px;
 }
 
+/* shop詳細ページ(トップ) */
+
+.shop-table {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top-th {
+  white-space: nowrap;
+}

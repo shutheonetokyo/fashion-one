@@ -1,8 +1,36 @@
-<div class="row">
-  <div class="col-lg-5">
-    <%= image_tag @shop.image.url, size: "320x240", class: "img-responsive" %>
-  </div>
-  <div class="col-lg-5">
-    <%= @shop.shopping_hours %>
-  </div>
+<div class="text-center mt-3">
+  <%= image_tag @shop.image.url, size: "320x240" %>
 </div>
+
+<table class="table">
+  <p class="shop-table">詳細情報</p>
+  <tbody>
+    <tr>
+      <th class="bg-light top-th">店舗名</th>
+      <td><%= @shop.name %></td>
+    </tr>
+    <tr>
+      <th class="bg-light top-th">ジャンル</th>
+      <td><%= @shop.genre.name %></td>
+    </tr>
+    <tr>
+      <th class="bg-light top-th">住所</th>
+      <td><%= @shop.address %></td>
+    </tr>
+    <tr>
+      <th class="bg-light top-th">アクセス</th>
+      <td><%= @shop.access %></td>
+    </tr>
+    <tr>
+      <th class="bg-light top-th">住所</th>
+      <td><%= @shop.address %></td>
+    </tr>
+    <tr>
+      <th class="bg-light top-th">URL</th>
+      <td><%= text_url_to_link(@shop.URL).html_safe %></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
