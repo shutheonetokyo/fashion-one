@@ -1,6 +1,4 @@
-class ShopsController < ApplicationController
-  
-
+class ShopsController < ApplicationController  
   PER_PAGE = 10
 
   def index
@@ -19,5 +17,4 @@ class ShopsController < ApplicationController
   def shop_params
     params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id)
   end
-
 end
