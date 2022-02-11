@@ -1,7 +1,6 @@
 <div class="text-center mt-3">
   <%= image_tag @shop.image.url, size: "320x240" %>
 </div>
-
 <table class="table">
   <p class="shop-table">詳細情報</p>
   <tbody>
@@ -29,8 +28,5 @@
       <th class="bg-light top-th">URL</th>
       <td><%= text_url_to_link(@shop.URL).html_safe %></td>
     </tr>
-
   </tbody>
 </table>
-
-
