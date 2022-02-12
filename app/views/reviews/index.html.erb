@@ -1,30 +1,49 @@
-<h1>口コミ一覧</h1>
-<p><%= link_to '口コミを投稿する', new_shop_review_path %></p>
+<div class="text-center mt-5">
+  <%= link_to '口コミを投稿する', new_shop_review_path,class: "review-btn" %>
+</div>
 
-<% @reviews.each do |review|%>
-  <p><%= review.user.name %></p>
-  <% if review.user_id == current_user&.id %>
-    <%= link_to "編集", edit_shop_review_path(@shop, review) %>
-    <%= link_to "削除", shop_review_path(@shop, review), method: :delete, data: { confirm: "削除しますか？" } %>
+<div class="body-center">
+  <% @reviews.each do |review|%>
+    <div class="card my-4 p-3">
+      <div class="border-bottom mb-3">
+        <p><%= review.user.name %>さんの口コミ</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-shop-score">
+          <div id="star-score<%= review.id%>"></div>    
+          <script>
+            $('#star-score<%= review.id%>').empty();
+            $('#star-score<%= review.id%>').raty({
+              readOnly: true,
+              size      : 36,
+              starOn    : '<%= asset_path('star-on.png') %>',
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half      : false,
+              readOnly: true,
+              score: <%= review.score %>,
+            });
+          </script>
+        </div>
+        <div class="col-lg-9 col-review-average">
+          <p><%= review.score.to_f %></p>
+        </div>
+      </div>
+
+      <div class="border-top pt-2 review-title">
+        <p><%= review.title %></p>
+      </div>
+      <p><%= review.content %></p>
+
+      <% if review.user_id == current_user&.id %>
+        <%= link_to "編集", edit_shop_review_path(@shop, review) %>
+        <%= link_to "削除", shop_review_path(@shop, review), method: :delete, data: { confirm: "削除しますか？" } %>
+      <% end %>
+
+      <p class="text-right"><%= review.created_at.strftime('%Y/%m/%d') %></p>
+    </div>
   <% end %>
+</div>
 
-  <div id="star-score<%= review.id%>"></div>    
-    <script>
-      $('#star-score<%= review.id%>').empty();
-      $('#star-score<%= review.id%>').raty({
-        readOnly: true,
-        size      : 36,
-        starOff   : '<%= asset_path('star-off.png') %>',
-        starOn    : '<%= asset_path('star-on.png') %>',
-        starHalf: "<%= asset_path('star-half.png') %>",
-        half      : false,
-        readOnly: true,
-        score: <%= review.score %>,
-      });
-    </script>
-    <p><%= review.score.to_f %>点</p>
-    <p><%= review.title %></p>
-    <p><%= review.content %></p>
-    <p><%= review.created_at.strftime('%Y/%m/%d') %></p>
-  </div>
-<% end %>
+
+
