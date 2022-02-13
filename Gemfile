@@ -18,6 +18,8 @@ gem 'kaminari'
 gem 'ransack'
 gem 'bulma-rails'
 gem 'jquery-rails'
+gem 'dotenv-rails'
+gem 'geocoder'
 gem "pg", "~> 1.1"
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'

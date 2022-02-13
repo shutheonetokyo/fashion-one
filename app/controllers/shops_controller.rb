@@ -12,9 +12,12 @@ class ShopsController < ApplicationController
     @reviews = Review.where(shop_id:params[:id])
   end
 
+  def map
+  end
+
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id)
+    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id, :map_address, :latitude, :longitude)
   end
 end

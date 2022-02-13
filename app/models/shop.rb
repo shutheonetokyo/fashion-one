@@ -19,4 +19,7 @@ class Shop < ApplicationRecord
       0.0
     end
   end
+
+  geocoded_by :map_address
+  after_validation :geocode, if: :map_address_changed?
 end
