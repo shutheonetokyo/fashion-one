@@ -26,4 +26,6 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resources :reviews
   end
+
+  resources :maps
 end
