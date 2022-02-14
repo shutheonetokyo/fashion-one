@@ -1,33 +1,97 @@
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
-<p><%= image_tag @user.image.url %></p>
+<div class="container">
+  <h2 class="text-center my-4"><%= @user.name %>さんのマイページ</h2>
+  <div class="text-center mb-3">
+    <%= image_tag @user.image.url, class: "rounded", size: "150x150"%>
+  </div>
 
+  <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="top-tab" data-toggle="tab" href="#top" role="tab" aria-controls="top" aria-selected="true">
+      トップ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="like-tab" data-toggle="tab" href="#like" role="tab" aria-controls="like" aria-selected="false">保存済みのお店 <%= @user.liked_shops.count%>件</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">口コミしたお店 <%= @user.reviewed_shops.count%>件</a>
+    </li>
+  </ul>
 
-<div class="cover-user-show">
-  <p>保存済みのお店一覧</p>
-  <% current_user.liked_shops.each do |shop| %>
-    <%= link_to shop do %>
-      <p><%= shop.name %></p>
-      <p><%= shop.address %></p>
-      <p><%= shop.area.name %></p>
-      <p class="fas fa-comment-dots"><%= shop.reviews.count %>件</p>
-      <p class="fas fa-bookmark"><%= shop.likes.count %>件</p>
-    <% end %>
-    <div class="average-score" data-score=<%= shop.average_score %>></div>
-    <script>
-      $('.average-score').empty();
-        $('.average-score').raty({
-          readOnly: true,
-          starOn: "<%= asset_path('star-on.png') %>",
-          starOff: "<%= asset_path('star-off.png') %>",
-          starHalf: "<%= asset_path('star-half.png') %>",
-          score: function() {
-            return $(this).attr('data-score')
-          }
-        });
-    </script>
-      <p><%= shop.average_score %></p>
-  <% end %>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="top" role="tabpanel" aria-labelledby="top-tab">
+
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+        <h5 class="m-3 readonly">自己紹介</h5>
+        </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" readonly><%= @user.self_introduction %></textarea>
+      </div>
+    </form>
+
+    </div>
+    <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab">
+    
+      <div class="cover-user-show">
+        <% if current_user.liked_shops.present? %>
+          <% current_user.liked_shops.each do |shop| %>
+            <%= link_to shop do %>
+              <p><%= shop.name %></p>
+              <p><%= shop.address %></p>
+              <p><%= shop.area.name %></p>
+              <p class="fas fa-comment-dots"><%= shop.reviews.count %>件</p>
+              <p class="fas fa-bookmark"><%= shop.likes.count %>件</p>
+            <% end %>
+            <div class="average-score" data-score=<%= shop.average_score %>></div>
+            <script>
+              $('.average-score').empty();
+                $('.average-score').raty({
+                  readOnly: true,
+                  starOn: "<%= asset_path('star-on.png') %>",
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starHalf: "<%= asset_path('star-half.png') %>",
+                  score: function() {
+                    return $(this).attr('data-score')
+                  }
+                });
+            </script>
+              <p><%= shop.average_score %></p>
+          <% end %>
+        <% else %>
+          <h1 class="shop-list-count">保存済みのお店はありません。</h1>
+        <% end %>
+
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+
+      <div class="cover-user-show">
+        <% current_user.reviewed_shops.each do |shop| %>
+          <%= link_to shop do %>
+            <p><%= shop.name %></p>
+            <p><%= shop.address %></p>
+            <p><%= shop.area.name %></p>
+            <p class="fas fa-comment-dots"><%= shop.reviews.count %>件</p>
+            <p class="fas fa-bookmark"><%= shop.likes.count %>件</p>
+          <% end %>
+          <div class="average-score" data-score=<%= shop.average_score %>></div>
+          <script>
+            $('.average-score').empty();
+              $('.average-score').raty({
+                readOnly: true,
+                starOn: "<%= asset_path('star-on.png') %>",
+                starOff: "<%= asset_path('star-off.png') %>",
+                starHalf: "<%= asset_path('star-half.png') %>",
+                score: function() {
+                  return $(this).attr('data-score')
+                }
+              });
+          </script>
+            <p><%= shop.average_score %></p>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
 </div>
-
-

@@ -304,86 +304,32 @@ li {
   list-style: none;
 }
 
-/* shop一覧ページ */
-
-.shop-list-count {
-  padding-top: 12px;
-  font-size: 24px;
-  text-align: center;
-}
-
-.shop-list {
-  padding-left: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-}
-
-.shop-list-name {
-  color: #1E90FF;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.shop-list-image {
-  max-width: 240px;
-}
-
-.shop-list-content {
-  margin-bottom: 10px;
-  color: black;
-  font-size: 18px;
-}
 
 /* shopページ 共通 */
 
-.shop-comment-like {
-}
 
 .col-shop-score {
   max-width: 170px;
 }
 
 .col-shop-average {
-  max-width: 60px;
+  max-width: 50px;
 }
 
-.col-shop-review {
-  max-width: 86px;
-}
-
-.col-shop-like {
-  max-width: 20px;
-}
-
-.col-shop-likecount {
-  max-width: 60px;
-  font-weight: bold;
-}
 
 /* shop詳細ページ */
 
 
-.row-shop-title {
-  margin-top: 40px;
+.col-shop-review {
+  max-width: 90px;
 }
 
-.col-shop-name {
-  color: black;
-  font-size: 28px;
-  font-weight: bold;
+.col-shop-like {
+  max-width: 16px;
 }
 
-.row-shop-score {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #DDDDDD;
-}
-
-.col-shop-average {
-  max-height: 40px;
-  font-size: 24px;
-  color: red;
-  font-weight: bold;
+.col-shop-likecount {
+  max-width: 60px;
 }
 
 .like-btn {
@@ -449,4 +395,15 @@ li {
   padding: 10px;
   color: white;
   background-color: #007bff;;
+}
+
+/* マイページ(トップ) */
+
+.nav-pills .nav-link.active{
+  background-color: #333333;
+}
+
+/* タブの文字色変更 */
+.nav-pills .nav-link{
+  color: #333333;
 }

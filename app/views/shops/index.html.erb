@@ -1,45 +1,54 @@
 <div class="container">
-  <% if @shops.present? %>
-    <h1 class="shop-list-count"><%= @shops.length%>件ヒットしました。</h1>
-    <% @shops.each do |shop| %>
-      <%= link_to shop do %>
-      <div class="card shop-list">
-        <div class="row">
-          <div class="col-lg-10 card-body shop-list-name">
-            <p><%= shop.name %></p>
+  <div class="mx-auto" style="max-width: 80%" >
+    <% if @shops.present? %>
+      <h3 class="text-center my-4"><%= @shops.length%>件ヒットしました。</h3>
+      <% @shops.each do |shop| %>
+        <%= link_to shop do %>
+          <div class="py-3 border-top ">
+            <h3 class="mb-3 font-weight-bold"><%= shop.name %></h3>
+            <div class="row">
+              <div class="col-lg-3 mb-3">
+                <%= image_tag shop.image.url, class: "rounded" %>
+              </div>
+              <h5 class="col-lg-7 text-dark">
+                <div class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></div>
+                <div class="shop-access"><%= shop.access %></div>
+              </h5>
+            </div>
+            <div class="row">
+
+              <div class="col-lg-4 col-shop-score">
+                <div class="average-score" data-score=<%= shop.average_score %>></div>
+                <script>
+                  $('.average-score').empty();
+                    $('.average-score').raty({
+                      readOnly: true,
+                      starOn: "<%= asset_path('star-on.png') %>",
+                      starOff: "<%= asset_path('star-off.png') %>",
+                      starHalf: "<%= asset_path('star-half.png') %>",
+                      score: function() {
+                        return $(this).attr('data-score')
+                      }
+                    });
+                </script>
+              </div>
+
+              <div class="col-lg-4 col-shop-average">
+                <h4 class="text-danger"><%= shop.average_score %></h4>
+              </div>
+
+              <div class="col-lg-4 text-dark">
+                <div class="fas fa-comment-dots "> <%= shop.reviews.count %> 件</div>
+                <div class="fas fa-bookmark"> <%= shop.likes.count %> 件</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 d-sm-block d-none shop-list-image">
-            <%= image_tag shop.image.url %>
-          </div>
-          <div class="col-lg-7 shop-list-content">
-            <div class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></div>
-            <div class="shop-access"><%= shop.access %></div>
-            <div class="average-score" data-score=<%= shop.average_score %>></div>
-            <script>
-              $('.average-score').empty();
-                $('.average-score').raty({
-                  readOnly: true,
-                  starOn: "<%= asset_path('star-on.png') %>",
-                  starOff: "<%= asset_path('star-off.png') %>",
-                  starHalf: "<%= asset_path('star-half.png') %>",
-                  score: function() {
-                    return $(this).attr('data-score')
-                  }
-                });
-            </script>
-            <div><%= shop.average_score %></div>
-            <div class="fas fa-comment-dots"> <%= shop.reviews.count %> 件</div>
-            <div class="fas fa-bookmark"> <%= shop.likes.count %> 件</div>
-          </div>
-        </div>
-      </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <h2 class="shop-list-count">検索結果は見つかりませんでした。</h2>
     <% end %>
-  <% else %>
-    <h1 class="shop-list-count">検索結果は見つかりませんでした。</h1>
-  <% end %>
+  </div>
 </div>
 
 <%= paginate @shops %>
