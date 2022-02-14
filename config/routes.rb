@@ -12,20 +12,16 @@ Rails.application.routes.draw do
   devise_scope :user do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
-  
-  resources :users, only: [:show] do
-    collection do
-      get :likes
-      get :reviews
-    end
-  end
+
+  resources :users, only: [:show]
 
   resources :areas
-  
+
+  resources :maps
+
   resources :shops do
     resource :likes, only: [:create, :destroy]
     resources :reviews
   end
 
-  resources :maps
 end
