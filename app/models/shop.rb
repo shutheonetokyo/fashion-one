@@ -3,6 +3,7 @@ class Shop < ApplicationRecord
 
   belongs_to :area, optional: true
   belongs_to :genre, optional: true
+  belongs_to :brand, optional: true
 
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
