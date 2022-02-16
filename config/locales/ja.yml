@@ -14,6 +14,7 @@ ja:
       shop: ショップ
       area: エリア
       genre: ジャンル
+      brand: ブランド
       like: 保存済み
       review: 口コミ
     attributes:
@@ -33,9 +34,12 @@ ja:
         URL: URL
         area: エリア
         genre: ジャンル
+        brand: ブランド
       area:
         name: 名前
       genre:
+        name: 名前
+      brand:
         name: 名前
       like:
         user: ユーザー
