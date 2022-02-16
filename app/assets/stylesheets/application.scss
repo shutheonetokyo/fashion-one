@@ -22,6 +22,11 @@
   font-size: 14px;
 }
 
+body {
+  padding-top: 50px;
+}
+
+
 /* static_pages home */
 
 .jumbotron {
@@ -48,8 +53,7 @@
 /* static_pages genre */
 
 .genre {
-  display: flex;
-  gap: 2px;
+  display: inline-block;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1rf));
   flex-wrap: wrap;
 }
@@ -58,7 +62,7 @@
   background-color: black;
   position: relative; /*相対配置*/
   white-space: nowrap;
-  margin: 10px;
+  margin: 6px;
   :hover {
     opacity: 0.7;
   }

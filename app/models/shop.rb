@@ -1,8 +1,8 @@
 class Shop < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-  belongs_to :area
-  belongs_to :genre
+  belongs_to :area, optional: true
+  belongs_to :genre, optional: true
 
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user

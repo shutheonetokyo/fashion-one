@@ -4,7 +4,6 @@ class ShopsController < ApplicationController
   def index
     @q = Shop.ransack(params[:q])
     @shops = @q.result.page(params[:page]).per(PER_PAGE)
-    @areas = Area.find(params[:q][:area_id_eq])
   end
 
   def show

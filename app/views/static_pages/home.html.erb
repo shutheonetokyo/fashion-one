@@ -8,101 +8,44 @@
   </div>
 </div>
 
-<div class="mx-auto" style="max-width: 90%" >
+<div class="mx-auto" style="max-width: 80%" >
 
   <h4 class="font-weight-bold mb-3">キーワードから探す</h4>
   <%= search_form_for @q, url: shops_path do |f| %>
-    <div class="input-group ml-5" style="width: 90%">
-      <%= f.search_field :name_cont, required: true, class:"form-control input-group-prepend", placeholder:"キーワード［例: ユニクロ］"%>
+    <div class="input-group ml-4" style="width: 90%">
+      <%= f.search_field :area_name_or_genre_name_or_name_cont, class:"form-control input-group-prepend", placeholder:"キーワード［例: ユニクロ］"%>
       <%= f.submit "検索",class:"btn btn-primary" %>
     </div>
   <% end %>
 
   <h4 class="font-weight-bold mt-5">エリアから探す</h4>
-  <div class="card" style="width: 90%">
+  <div class="card ml-4" style="width: 90%">
     <div class="card-body">
       <h4 class="font-weight-bold">東京</h4>
       <p class="card-text">
         <% @areas.each do |area| %>
-          <%= link_to area.name, shops_path(q: { area_id_eq: area.id}), class: 'btn  btn-outline-secondary btn-lg m-3' %>
+          <%= link_to area.name, shops_path(q: { area_id_eq: area.id}), class: 'btn  btn-outline-dark btn-lg m-3' %>
         <% end %>
       </p>
     </div>
   </div>
 
   <h4 class="font-weight-bold mt-5">ジャンルから探す</h4>
-  <div class="genre">
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("fastfashion.jpeg", class:"genre-image") %>
-        <p class="genre-name">ファストファッション</p>
-      <% end %>
-    </div>
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("selectshop.jpeg", class:"genre-image") %>
-        <p class="genre-name">セレクトショップ</p>
-      <% end %>
-    </div>
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("street.jpeg", class:"genre-image") %>
-        <p class="genre-name">ストリートファッション</p>
-      <% end %>
-    </div>
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("modefashion.jpeg", class:"genre-image") %>
-        <p class="genre-name">モードファッション</p>
-      <% end %>
-    </div>
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("luxury.jpeg", class:"genre-image") %>
-        <p class="genre-name">ラグジュアリー</p>
-      <% end %>
-    </div>
-    <div class="genre-list">
-      <%= link_to root_path do %>
-        <%= image_tag("vintage.jpeg", class:"genre-image") %>
-        <p class="genre-name">ヴィンテージ</p>
-      <% end %>
-    </div>
-  </div>
-
+  <%= search_form_for @q do |f|%>
+    <%= render partial: "shops/genre_search", locals: { heading: "ファストファッション",path: shops_path(q: { genre_name_cont_any: [ "ファストファッション"]}),image:"/assets/fastfashion.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "セレクトショップ",path: shops_path(q: { genre_name_cont_any: [ "セレクトショップ"]}),image:"/assets/selectshop.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ストリートファッション",path: shops_path(q: { genre_name_cont_any: [ "ストリートファッション"]}),image:"/assets/street.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "モードファッション",path: shops_path(q: { genre_name_cont_any: [ "モードファッション"]}),image:"/assets/modefashion.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ラグジュアリー",path: shops_path(q: { genre_name_cont_any: [ "ラグジュアリー"]}),image:"/assets/luxury.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ヴィンテージ",path: shops_path(q: { genre_name_cont_any: [ "ヴィンテージ"]}),image:"/assets/vintage.jpeg"} %>
+  <% end %>
 
   <h4 class="font-weight-bold mt-5">ブランドから探す</h4>
-  <div class="brand">
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("UNIQLO.png", class:"brand-image") %>
-      <% end %>
-    </div>
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("GU.png", class:"brand-image") %>
-      <% end %>
-    </div>
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("H&M.jpeg", class:"brand-image") %>
-      <% end %>
-    </div>
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("ZARA.jpeg", class:"brand-image") %>
-      <% end %>
-    </div>
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("BEAMS.png", class:"brand-image") %>
-      <% end %>
-    </div>
-    <div class="brand-list">
-      <%= link_to root_path do %>
-        <%= image_tag("UNITEDARROWS.jpeg", class:"brand-image") %>
-      <% end %>
-    </div>
-  </div>
-</div>
+  <%= search_form_for @q do |f|%>
+    <%= render partial: "shops/brand_search", locals: { heading: "ユニクロ",path: shops_path(q: { brand_name_cont_any: [ "ユニクロ"]}),image:"/assets/UNIQLO.png"} %>
+  <% end %>
 
+
+
+
+</div>
