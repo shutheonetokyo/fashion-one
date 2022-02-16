@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_12_130437) do
+ActiveRecord::Schema.define(version: 2022_02_16_060352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 2022_02_12_130437) do
   end
 
   create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "brands", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -92,7 +98,9 @@ ActiveRecord::Schema.define(version: 2022_02_12_130437) do
     t.string "map_address"
     t.float "latitude"
     t.float "longitude"
+    t.bigint "brand_id"
     t.index ["area_id"], name: "index_shops_on_area_id"
+    t.index ["brand_id"], name: "index_shops_on_brand_id"
     t.index ["genre_id"], name: "index_shops_on_genre_id"
   end
 
@@ -116,5 +124,6 @@ ActiveRecord::Schema.define(version: 2022_02_12_130437) do
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shops", "areas"
+  add_foreign_key "shops", "brands"
   add_foreign_key "shops", "genres"
 end
