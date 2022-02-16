@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user! ,except: :index
   before_action :set_review, only: %i[ edit update destroy ]
 
+  PER_PAGE = 10
+
   def index
     @shop = Shop.find(params[:shop_id])
     @reviews = @shop.reviews.order(created_at: :desc)

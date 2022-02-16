@@ -8,247 +8,44 @@
   </div>
 </div>
 
-<!-- static_pages search -->
+<div class="mx-auto" style="max-width: 80%" >
 
-<div class="search">
-  <h1>キーワードから探す</h1>
+  <h4 class="font-weight-bold mb-3">キーワードから探す</h4>
   <%= search_form_for @q, url: shops_path do |f| %>
-    <div class="input-group">
-      <%= f.search_field :name_cont, required: true, class:"form-control input-group-prepend", placeholder:"キーワード［例: ユニクロ］"%>
+    <div class="input-group ml-4" style="width: 90%">
+      <%= f.search_field :area_name_or_genre_name_or_name_cont, class:"form-control input-group-prepend", placeholder:"キーワード［例: ユニクロ］"%>
       <%= f.submit "検索",class:"btn btn-primary" %>
     </div>
   <% end %>
-  </div>
-</div>
 
-<!-- static_pages area -->
-
-<div class="area">
-  <h1>エリアから探す</h1>
-  <div class="card ml-3" style="width: 90%">
+  <h4 class="font-weight-bold mt-5">エリアから探す</h4>
+  <div class="card ml-4" style="width: 90%">
     <div class="card-body">
-      <h1>東京</h1>
+      <h4 class="font-weight-bold">東京</h4>
       <p class="card-text">
         <% @areas.each do |area| %>
-          <%= link_to area.name, shops_path(q: { area_id_eq: area.id}), class: 'btn  btn-outline-secondary btn-lg m-3' %>
+          <%= link_to area.name, shops_path(q: { area_id_eq: area.id}), class: 'btn  btn-outline-dark btn-lg m-3' %>
         <% end %>
       </p>
     </div>
   </div>
+
+  <h4 class="font-weight-bold mt-5">ジャンルから探す</h4>
+  <%= search_form_for @q do |f|%>
+    <%= render partial: "shops/genre_search", locals: { heading: "ファストファッション",path: shops_path(q: { genre_name_cont_any: [ "ファストファッション"]}),image:"/assets/fastfashion.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "セレクトショップ",path: shops_path(q: { genre_name_cont_any: [ "セレクトショップ"]}),image:"/assets/selectshop.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ストリートファッション",path: shops_path(q: { genre_name_cont_any: [ "ストリートファッション"]}),image:"/assets/street.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "モードファッション",path: shops_path(q: { genre_name_cont_any: [ "モードファッション"]}),image:"/assets/modefashion.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ラグジュアリー",path: shops_path(q: { genre_name_cont_any: [ "ラグジュアリー"]}),image:"/assets/luxury.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "ヴィンテージ",path: shops_path(q: { genre_name_cont_any: [ "ヴィンテージ"]}),image:"/assets/vintage.jpeg"} %>
+  <% end %>
+
+  <h4 class="font-weight-bold mt-5">ブランドから探す</h4>
+  <%= search_form_for @q do |f|%>
+    <%= render partial: "shops/brand_search", locals: { heading: "ユニクロ",path: shops_path(q: { brand_name_cont_any: [ "ユニクロ"]}),image:"/assets/UNIQLO.png"} %>
+  <% end %>
+
+
+
+
 </div>
-
-<!-- static_pages genre -->
-
-<h1 class="genre-title">ジャンルから探す</h1>
-<div class="genre">
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("fastfashion.jpeg", class:"genre-image") %>
-      <p class="genre-name">ファストファッション</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("selectshop.jpeg", class:"genre-image") %>
-      <p class="genre-name">セレクトショップ</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("street.jpeg", class:"genre-image") %>
-      <p class="genre-name">ストリートファッション</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("modefashion.jpeg", class:"genre-image") %>
-      <p class="genre-name">モードファッション</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("luxury.jpeg", class:"genre-image") %>
-      <p class="genre-name">ラグジュアリー</p>
-    <% end %>
-  </div>
-  <div class="genre-list">
-    <%= link_to root_path do %>
-      <%= image_tag("vintage.jpeg", class:"genre-image") %>
-      <p class="genre-name">ヴィンテージ</p>
-    <% end %>
-  </div>
-</div>
-
-<!-- static_pages brand -->
-
-<h1 class="brand-title">ブランドから探す</h1>
-<div class="brand">
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("UNIQLO.png", class:"brand-image") %>
-    <% end %>
-  </div>
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("GU.png", class:"brand-image") %>
-    <% end %>
-  </div>
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("H&M.jpeg", class:"brand-image") %>
-    <% end %>
-  </div>
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("ZARA.jpeg", class:"brand-image") %>
-    <% end %>
-  </div>
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("BEAMS.png", class:"brand-image") %>
-    <% end %>
-  </div>
-  <div class="brand-list">
-    <%= link_to root_path do %>
-      <%= image_tag("UNITEDARROWS.jpeg", class:"brand-image") %>
-    <% end %>
-  </div>
-</div>
-
-
-<!--
-<div class="genre">
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/fastfashion.jpeg" alt=""class="genre-image"/>
-    <span class="genre-name">ファストファッション</span></a>
-  </div>
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/selectshop.jpeg" alt=""class="genre-image"/>
-    <span class="genre-name">セレクトショップ</span></a>
-  </div>
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/street.jpg" alt=""class="genre-image"/>
-    <span class="genre-name">ストリートファッション</span></a>
-  </div>
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/modefashion.jpeg" alt=""class="genre-image"/>
-    <span class="genre-name">モードファッション</span></a>
-  </div>
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/luxury.jpeg" alt=""class="genre-image"/>
-    <span class="genre-name">ラグジュアリー</span></a>
-  </div>
-  <div class="genre-list">
-    <a href="static_pages/home"><img src="assets/vintage.jpeg" alt=""class="genre-image"/>
-    <span class="genre-name">ヴィンテージ</span></a>
-  </div>
-</div>
--->
-
-<!--
-<div class="genre">
-  <div class="genre-title">
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-    <div class="genre-list">
-      <%= link_to image_tag("fastfashion.jpeg",class:"genre-image"), "/" %>
-      <p>ファストファッション</p>
-    </div>
-  </div>
-</div>
--->
-
-
-
-<!--
-<h3 class="ml-3 mb-4" id="area_search">エリアから探す</h3>
-<div class="card  ml-3 search_item" style="width:90%;">
-  <div class="card-body">
-    <h3 class="card-title ml-2">東京</h3>
-    <p class="card-text">
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-      <%= link_to "渋谷", root_path, class: 'btn  btn-outline-secondary btn-lg'%>
-    </p>
-  </div>
-</div>
--->
-
-<!--
-<tbody>
-      <tr>
-        <th>東京</th>
-      </tr>
-      <tr>
-        <td><%= link_to "渋谷", root_path %></td>
-        <td>原宿</td>
-        <td>表参道</td>
-        <td>代官山</td>
-        <td>中目黒</td>
-      </tr>
-      <tr>
-        <td>新宿</td>
-        <td>代々木</td>
-        <td>中野</td>
-        <td>池袋</td>
-        <td>高円寺</td>
-      </tr>
-      <tr>
-        <td>吉祥寺</td>
-        <td>有楽町</td>
-        <td>六本木</td>
-        <td>銀座</td>
-        <td>東京</td>
-      </tr>
-    </tbody>
--->
-
-
-<!--
-<div class="search-form">
-  <div class="input-group">
-    <input type="text" id="txt-search" class="form-control input-group-prepend" placeholder="エリア［例: 渋谷］"></input>
-    <input type="text" id="txt-search" class="form-control input-group-prepend" placeholder="キーワード［例: ユニクロ］"></input>
-
-    <span class="input-group-btn input-group-append">
-      <submit type="submit" id="btn-search" class="btn btn-primary"><i class="fas fa-search"></i> 検索</submit>
-    </span>
-  </div>
-</div>
--->
-
-<!-- 
-<div class="search-form">
-  <form action="/shops/searches" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
-
-    <input type="text" name="area" id="area-search-field" value="" placeholder="エリア[例：下北沢]" autocomplete="off" class="search-box__content left-content">
-
-    <input type="text" name="keyword" id="keyword-field" value="" placeholder="キーワード[例：yohji yamamoto]" autocomplete="off" class="search-box__content">
-
-    <button name="button" type="submit" class="search-box__submit" id="search-submit-btn">検 索</button>
-  </form>
-</div>
--->
-
-
