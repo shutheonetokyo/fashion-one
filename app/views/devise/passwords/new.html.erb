@@ -1,5 +1,5 @@
-<h2 class="reset-password-title">パスワード再設定</h2>
-<div class="reset-password-form">
+<h2 class="text-center font-weight-bold mt-5">パスワード再設定</h2>
+<div class="mx-auto" style="max-width: 70%" >
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -8,8 +8,8 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
 
-    <div class="reset-password-button">
-      <%= f.submit t('.send_me_reset_password_instructions') %>
+    <div class="text-center">
+      <%= f.submit t('.send_me_reset_password_instructions'),class:"btn btn-lg btn-secondary my-4" %>
     </div>
   <% end %>
 
