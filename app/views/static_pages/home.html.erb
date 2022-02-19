@@ -42,12 +42,24 @@
 
   <h4 class="font-weight-bold mt-5">ブランドから探す</h4>
   <%= search_form_for @q do |f|%>
-    <%= render partial: "shops/brand_search", locals: {path: shops_path(q: { brand_name_cont_any: [ "ユニクロ"]}),image:"/assets/UNIQLO.png"} %>
-    <%= render partial: "shops/brand_search", locals: { heading: "GU",path: shops_path(q: { brand_name_cont_any: [ "GU"]}),image:"/assets/GU.png"} %>
-    <%= render partial: "shops/brand_search", locals: { heading: "H&M",path: shops_path(q: { brand_name_cont_any: [ "H&M"]}),image:"/assets/H&M.jpeg"} %>
-    <%= render partial: "shops/brand_search", locals: { heading: "ZARA",path: shops_path(q: { brand_name_cont_any: [ "ZARA"]}),image:"/assets/ZARA.jpeg"} %>
-    <%= render partial: "shops/brand_search", locals: { heading: "BEAMS",path: shops_path(q: { brand_name_cont_any: [ "BEAMS"]}),image:"/assets/BEAMS.png"} %>
-    <%= render partial: "shops/brand_search", locals: { heading: "UNITEDARROWS",path: shops_path(q: { brand_name_cont_any: [ "UNITEDARROWS"]}),image:"/assets/UNITEDARROWS.jpeg"} %>
+    <div class="ml-3">
+      <h5 class="font-weight-bold mt-5">ファストファッション</h5>
+        <%= render partial: "shops/brand_search", locals: {path: shops_path(q: { brand_name_cont_any: [ "ユニクロ"]}),image:"/assets/UNIQLO.png"} %>
+        <%= render partial: "shops/brand_search", locals: { heading: "GU",path: shops_path(q: { brand_name_cont_any: [ "GU"]}),image:"/assets/GU.png"} %>
+        <%= render partial: "shops/brand_search", locals: { heading: "H&M",path: shops_path(q: { brand_name_cont_any: [ "H&M"]}),image:"/assets/H&M.jpeg"} %>
+        <%= render partial: "shops/brand_search", locals: { heading: "ZARA",path: shops_path(q: { brand_name_cont_any: [ "ZARA"]}),image:"/assets/ZARA.jpeg"} %>
+
+      <h5 class="font-weight-bold mt-5">セレクトショップ</h5>
+        <%= render partial: "shops/brand_search", locals: { heading: "BEAMS",path: shops_path(q: { brand_name_cont_any: [ "BEAMS"]}),image:"/assets/BEAMS.png"} %>
+        <%= render partial: "shops/brand_search", locals: { heading: "UNITEDARROWS",path: shops_path(q: { brand_name_cont_any: [ "UNITEDARROWS"]}),image:"/assets/UNITEDARROWS.jpeg"} %>
+
+      <h5 class="font-weight-bold mt-5">ストリートファッション</h5>
+        <%= render partial: "shops/brand_search", locals: { heading: "Supreme",path: shops_path(q: { brand_name_cont_any: [ "supreme"]}),image:"/assets/supreme.jpeg"} %>
+
+        <%= render partial: "shops/brand_search", locals: { heading: "STUSSY",path: shops_path(q: { brand_name_cont_any: [ "STUSSY"]}),image:"/assets/stussy.png"} %>
+
+        <%= render partial: "shops/brand_search", locals: { heading: "A BATHING APE",path: shops_path(q: { brand_name_cont_any: [ "A BATHING APE"]}),image:"/assets/bape.jpeg"} %>
+    </div>
   <% end %>
 
 
