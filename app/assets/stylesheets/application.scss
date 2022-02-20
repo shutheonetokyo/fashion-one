@@ -62,7 +62,7 @@ body {
   background-color: black;
   position: relative; /*相対配置*/
   white-space: nowrap;
-  margin: 6px;
+  margin-bottom: 20px;
   :hover {
     opacity: 0.7;
   }
@@ -72,7 +72,7 @@ body {
   position: absolute; /*絶対配置*/
   color: white;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
@@ -81,8 +81,8 @@ body {
 }
 
 .genre-image {
-  width: 170px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   opacity: 0.7;
 }
 
@@ -98,15 +98,15 @@ body {
   background-color: black;
   position: relative; /*相対配置*/
   white-space: nowrap;
-  margin: 6px;
+  margin: 2px;
   :hover {
     opacity: 0.7;
   }
 }
 
 .brand-image {
-  width: 170px;
-  height: 160px;
+  width: 130px;
+  height: 130px;
 }
 
 /*footer */
@@ -142,10 +142,6 @@ main {
   margin-bottom: 10px;
   font-weight: bold;
 }
-
-
-/* ログイン画面 */
-
 
 /* ユーザー編集画面 */
 
