@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 
   resources :genres
 
-  resources :maps
-
   resources :shops do
     resource :likes, only: [:create, :destroy]
     resources :reviews

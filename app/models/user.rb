@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :liked_shops, through: :likes, source: :shop
   has_many :reviews, dependent: :destroy
   has_many :reviewed_shops, through: :reviews, source: :shop
+  has_many :shops, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 

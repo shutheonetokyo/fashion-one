@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="mx-auto" style="max-width: 70%" >
+    <%= form_with model: @shop, local: true do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+
+      <div class="form-group">
+        <%= f.label :name, "店舗名" %> <span class="badge badge-danger">必須</span>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "最大30文字", maxlength: 30 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :area_id %> <span class="badge badge-danger">必須</span>
+        <%= f.collection_select :area_id, Area.all, :id, :name,include_blank: "エリアを選択して下さい" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :genre_id %> <span class="badge badge-danger">必須</span>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name,include_blank: "ジャンルを選択して下さい" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :brand_id %> <span class="badge badge-danger">必須</span>
+        <%= f.collection_select :brand_id, Brand.all, :id, :name,include_blank: "ブランドを選択して下さい" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: 'form-control', placeholder:"例: 東京都渋谷区神宮前3-24-7" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "画像" %><br />
+        <%= f.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, autofocus: true, class: 'form-control', placeholder: "最大500文字", maxlength: 500, rows: "6" %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= f.submit '投稿する', class:"btn btn-success" %>
+      </div>
+      <div class="text-center pt-3">
+        <%= link_to "ショップ画面に戻る", shops_path,class: "back-btn" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

@@ -18,10 +18,10 @@
       </li>
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          登録
+          投稿
         </a>
         <div class="dropdown-menu" aria-labelladby="navbarDropdown">
-          <%= link_to "お店を登録", shops_path, class: "dropdown-item" %>
+          <%= link_to "お店を投稿", new_shop_path, class: "dropdown-item" %>
           <%= link_to "アイテムを登録", shops_path, class: "dropdown-item" %>
         </div>
       </li>
@@ -35,9 +35,9 @@
           </div>
         </li>
       <% else %>
-        <%= link_to "会員登録", new_user_registration_path, class: "dropdown-item" %>
-        <%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %>
-        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "dropdown-item" %>
+        <%= link_to "会員登録", new_user_registration_path, class: "nav-item nav-link active" %>
+        <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active" %>
+        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav-item nav-link active" %>
       <% end %>
     </ul>
   </div>

@@ -33,8 +33,11 @@ ja:
         content: 紹介文
         URL: URL
         area: エリア
+        area_id: エリア
         genre: ジャンル
+        genre_id: ジャンル
         brand: ブランド
+        brand_id: ブランド
       area:
         name: 名前
       genre:
