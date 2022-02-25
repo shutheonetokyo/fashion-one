@@ -9,24 +9,26 @@
       <td><%= @shop.name %></td>
     </tr>
     <tr>
+      <th class="bg-light top-th">エリア</th>
+      <td><%= @shop.area.name %></td>
+    </tr>
+    <tr>
       <th class="bg-light top-th">ジャンル</th>
       <td><%= @shop.genre.name %></td>
     </tr>
     <tr>
-      <th class="bg-light top-th">住所</th>
-      <td><%= @shop.address %></td>
+      <th class="bg-light top-th">ブランド</th>
+      <td><%= @shop.brand.name %></td>
     </tr>
     <tr>
-      <th class="bg-light top-th">アクセス</th>
-      <td><%= @shop.access %></td>
-    </tr>
     <tr>
       <th class="bg-light top-th">住所</th>
       <td><%= @shop.address %></td>
     </tr>
     <tr>
-      <th class="bg-light top-th">URL</th>
-      <td><%= text_url_to_link(@shop.URL).html_safe %></td>
+      <th class="bg-light top-th">紹介文</th>
+      <td><%= @shop.content %></td>
     </tr>
+    <tr>
   </tbody>
 </table>

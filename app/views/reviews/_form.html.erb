@@ -1,28 +1,18 @@
 <div class="container">
   <div class="mx-auto" style="max-width: 70%" >
     <%= form_with(model: [shop, review]) do |f| %>
-      <% if review.errors.any? %>
-        <div class="notification is-danger">
-          <h2><%= review.errors.count %>件のエラーがあります。</h2>
-          <ul>
-            <% review.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= render "layouts/error_messages", model: f.object %>
 
-      <div class="col-shop-name text-center mt-3">
-        <p>口コミ投稿フォーム</p>
-      </div>
+      <h3 class="text-center font-weight-bold m-4">口コミ投稿フォーム</h3>
+
       <%= f.hidden_field :shop_id, value: shop.id %>
-      <div class="form-group">
+      <div class="field">
         <%= f.label :title, 'タイトル' %>
         <%= f.text_field :title, class: "form-control" %>
       </div>
 
       <!-- 評価 -->
-      <div class="form-group" id="score">
+      <div class="field" id="score">
         <%= f.label :score,'評価' %>
         <%= f.hidden_field :score, id: :review_score %>
       </div>
@@ -38,13 +28,13 @@
       });
       </script>
 
-      <div class="form-group">
+      <div class="field">
         <%= f.label :content, '口コミ内容 ', class:'col-form-label' %>
         <%= f.text_area :content, class: "form-control", rows: "8" %>
       </div>
 
       <!-- 確認ボタン -->
-      <div class="form-group text-center">
+      <div class="field text-center">
         <%= f.submit '投稿する', class:"btn btn-success" %>
       </div>
       <div class="text-center pt-3">
