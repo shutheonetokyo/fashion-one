@@ -37,6 +37,8 @@
     <%= render partial: "shops/genre_search", locals: { heading: "ストリートファッション",path: shops_path(q: { genre_name_cont_any: [ "ストリートファッション"]}),image:"/assets/street.jpeg"} %>
     <%= render partial: "shops/genre_search", locals: { heading: "モードファッション",path: shops_path(q: { genre_name_cont_any: [ "モードファッション"]}),image:"/assets/modefashion.jpeg"} %>
     <%= render partial: "shops/genre_search", locals: { heading: "ヴィンテージ",path: shops_path(q: { genre_name_cont_any: [ "ヴィンテージ"]}),image:"/assets/vintage.jpeg"} %>
+    <%= render partial: "shops/genre_search", locals: { heading: "その他",path: shops_path(q: { genre_name_cont_any: [ "その他"]}),image:"/assets/grey.jpeg"} %>
+
   <% end %>
 
   <h4 class="font-weight-bold mt-5">ブランドから探す</h4>
