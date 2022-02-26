@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_25_064157) do
+ActiveRecord::Schema.define(version: 2022_02_16_060352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,11 +99,9 @@ ActiveRecord::Schema.define(version: 2022_02_25_064157) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "brand_id"
-    t.bigint "user_id"
     t.index ["area_id"], name: "index_shops_on_area_id"
     t.index ["brand_id"], name: "index_shops_on_brand_id"
     t.index ["genre_id"], name: "index_shops_on_genre_id"
-    t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -128,5 +126,4 @@ ActiveRecord::Schema.define(version: 2022_02_25_064157) do
   add_foreign_key "shops", "areas"
   add_foreign_key "shops", "brands"
   add_foreign_key "shops", "genres"
-  add_foreign_key "shops", "users"
 end

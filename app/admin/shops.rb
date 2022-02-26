@@ -1,5 +1,5 @@
 ActiveAdmin.register Shop do
-  permit_params :name, :address, :TEL, :access, :shopping_hours, :image, :content, :URL, :area_id, :genre_id, :brand_id, :map_address
+  permit_params :name, :address, :TEL, :access, :shopping_hours, :image, :content, :URL, :area_id, :genre_id, :brand_id
 
   index do
     selectable_column
@@ -26,7 +26,6 @@ ActiveAdmin.register Shop do
       f.input :genre
       f.input :brand
       f.input :address
-      f.input :map_address
       f.input :TEL
       f.input :access
       f.input :shopping_hours

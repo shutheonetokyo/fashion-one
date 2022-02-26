@@ -30,10 +30,10 @@
         </div>
       </div>
 
-      <div class="border-top pt-2 review-title">
-        <p><%= review.title %></p>
-      </div>
-      <p><%= review.content %></p>
+      <h1 class="border-top pt-2"><%= review.title %></h1>
+      <h2><%= review.content %></h2>
+
+
 
       <% if review.user_id == current_user&.id %>
         <%= link_to "編集", edit_shop_review_path(@shop, review) %>
