@@ -28,7 +28,10 @@
       });
       </script>
 
-
+      <div class="field">
+        <%= f.label :image, "画像" %><br />
+        <%= f.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
+      </div>
 
       <div class="field">
         <%= f.label :content, '口コミ内容 ', class:'col-form-label' %>
