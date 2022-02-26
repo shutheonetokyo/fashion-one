@@ -4,7 +4,6 @@ class Shop < ApplicationRecord
   belongs_to :area, optional: true
   belongs_to :genre, optional: true
   belongs_to :brand, optional: true
-  belongs_to :user
 
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
@@ -34,6 +33,4 @@ class Shop < ApplicationRecord
     end
   end
 
-  geocoded_by :map_address
-  after_validation :geocode, if: :map_address_changed?
 end

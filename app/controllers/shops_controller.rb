@@ -1,6 +1,4 @@
-class ShopsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-
+class ShopsController < ApplicationController  
   PER_PAGE = 10
 
   def index
@@ -13,23 +11,9 @@ class ShopsController < ApplicationController
     @reviews = Review.where(shop_id:params[:id])
   end
 
-  def new
-    @shop = Shop.new
-  end
-
-  def create
-    @shop = current_user.shops.build(shop_params)
-    if @shop.save
-      redirect_to shops_path, notice: "登録しました"
-    else
-      flash.now[:alert] = "登録に失敗しました"
-      render :new
-    end
-  end
-  
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id, :genre_id, :brand_id, :map_address, :latitude, :longitude)
+    params.require(:shop).permit(:name, :address, :TEL, :access, :image, :shopping_hours, :content, :URL, :area_id, :genre_id, :brand_id)
   end
 end
