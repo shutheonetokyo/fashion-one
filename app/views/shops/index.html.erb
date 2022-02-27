@@ -15,7 +15,7 @@
                   <h5 class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></h5>
                   <h5 class="shop-access"><%= shop.access %></h5>
                 </div>
-                
+
                 <div class="col-shop-score">
                   <div class="average-score" data-score=<%= shop.average_score %>></div>
                   <script>
@@ -31,11 +31,9 @@
                       });
                   </script>
                 </div>
-
                 <div class="col-shop-average">
                   <h4 class="text-danger"><%= shop.average_score %></h4>
                 </div>
-
                 <div class="text-dark">
                   <div class="fas fa-comment-dots "> <%= shop.reviews.count %> 件</div>
                   <div class="fas fa-bookmark"> <%= shop.likes.count %> 件</div>

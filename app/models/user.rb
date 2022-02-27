@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, ImageUploader
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :self_introduction, length: { maximum: 500 }
@@ -7,8 +8,6 @@ class User < ApplicationRecord
   has_many :liked_shops, through: :likes, source: :shop
   has_many :reviews, dependent: :destroy
   has_many :reviewed_shops, through: :reviews, source: :shop
-
-  mount_uploader :image, ImageUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

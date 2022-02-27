@@ -3,7 +3,6 @@
   <div class="text-center mb-3">
     <%= image_tag @user.image.url, class: "rounded img-fluid", size: "200x200"%>
   </div>
-
   <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="top-tab" data-toggle="tab" href="#top" role="tab" aria-controls="top" aria-selected="true">
@@ -16,10 +15,8 @@
       <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">口コミしたお店 <%= @user.reviewed_shops.count%>件</a>
     </li>
   </ul>
-
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="top" role="tabpanel" aria-labelledby="top-tab">
-
     <form>
       <div class="mx-auto form-group" style="max-width: 80%" >
         <label for="exampleFormControlTextarea1">
@@ -31,7 +28,6 @@
     </form>
     </div>
     <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab">
-  
       <div class="cover-user-show">
         <div class="mx-auto" style="max-width: 80%" >
           <% if current_user.liked_shops.present? %>
@@ -48,7 +44,6 @@
                         <h5 class="shop-area-genre"><%= shop.area.name %> / <%= shop.genre.name %></h5>
                         <h5 class="shop-access"><%= shop.access %></h5>
                       </div>
-                      
                       <div class="col-shop-score">
                         <div class="average-score" data-score=<%= shop.average_score %>></div>
                         <script>
@@ -83,7 +78,6 @@
       </div>
     </div>
     <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-
       <div class="cover-user-show">
         <div class="mx-auto" style="max-width: 80%" >
           <% if current_user.reviewed_shops.present? %>
@@ -132,7 +126,6 @@
             <h4 class="text-center mt-5">口コミしたお店はありません。</h4>
           <% end %>
         </div>
-
       </div>
     </div>
   </div>
