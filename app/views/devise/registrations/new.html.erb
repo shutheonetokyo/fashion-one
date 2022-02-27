@@ -4,7 +4,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :name,"アカウント名" ,class:"sign_up_title" %> <span class="badge badge-danger">必須</span>
-      <%= f.text_field :name, autofocus: true, class:"form-control"%>
+      <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"最大30文字" %>
     </div>
     <div class="field">
       <%= f.label :email,class:"sign_up_title" %> <span class="badge badge-danger">必須</span>

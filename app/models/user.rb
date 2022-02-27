@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 30 }
   validates :self_introduction, length: { maximum: 500 }
 
   has_many :likes, dependent: :destroy

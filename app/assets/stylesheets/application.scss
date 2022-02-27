@@ -7,7 +7,6 @@
 
 /* hader */
 
-
 #logo {
   font-size: 1.1em;
   letter-spacing: -1px;
@@ -27,13 +26,13 @@ body {
   padding-top: 50px;
 }
 
-
 /* static_pages home */
 
 .jumbotron {
-  background-color: black;
   background-image: url(assets/background-image.jpeg);
-  padding-top: 90px;
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+  background-size: cover;
   color: black;
   h1 {
     font-weight: bold;
@@ -41,15 +40,14 @@ body {
   }
   p {
     font-size: 24px;
-    font-weight: bolder;
+    font-weight: bold;
   }
 }
 
 .home-title {
   margin-top: 60px;
-  min-height: 30vh;
+  min-height: 40vh;
 }
-
 
 /* static_pages genre */
 
@@ -136,7 +134,6 @@ main {
   flex: 1;
 }
 
-
 /* 全体の入力フォームの余白 */
 
 .field {
@@ -174,7 +171,6 @@ main {
   text-align: center;
 }
 
-
 /* フラッシュメッセージ */
 
 .notice {
@@ -207,9 +203,7 @@ li {
   list-style: none;
 }
 
-
 /* shopページ 共通 */
-
 
 .col-shop-score {
   max-width: 170px;
@@ -219,9 +213,7 @@ li {
   max-width: 50px;
 }
 
-
 /* shop詳細ページ */
-
 
 .col-shop-review {
   max-width: 90px;
@@ -311,8 +303,7 @@ li {
   color: #333333;
 }
 
-
-// paginate
+/* paginate */
 .pagination{
   margin: auto;
   width: 50%;
