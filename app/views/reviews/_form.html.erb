@@ -2,15 +2,12 @@
   <div class="mx-auto" style="max-width: 70%" >
     <%= form_with(model: [shop, review]) do |f| %>
       <%= render "layouts/error_messages", model: f.object %>
-
       <h3 class="text-center font-weight-bold m-4">口コミ投稿フォーム</h3>
-
       <%= f.hidden_field :shop_id, value: shop.id %>
       <div class="field">
         <%= f.label :title, 'タイトル' %>
         <%= f.text_field :title, class: "form-control" %>
       </div>
-
       <!-- 評価 -->
       <div class="field" id="score">
         <%= f.label :score,'評価' %>
@@ -27,17 +24,14 @@
         half: false,
       });
       </script>
-
       <div class="field">
         <%= f.label :image, "画像" %><br />
         <%= f.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
       </div>
-
       <div class="field">
         <%= f.label :content, '口コミ内容 ', class:'col-form-label' %>
         <%= f.text_area :content, class: "form-control", rows: "8" %>
       </div>
-
       <!-- 確認ボタン -->
       <div class="field text-center">
         <%= f.submit '投稿する', class:"btn btn-success" %>

@@ -53,7 +53,6 @@
       <p><%= @shop.area.name %>/<%= @shop.genre.name %></p>
       <p><%= @shop.access %></p>
     </div>
-
     <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="top-tab" data-toggle="tab" href="#top" role="tab" aria-controls="top" aria-selected="true">
@@ -63,7 +62,6 @@
         <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">口コミ</a>
       </li>
     </ul>
-
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="top" role="tabpanel" aria-labelledby="top-tab">
         <%= render 'top' %>    

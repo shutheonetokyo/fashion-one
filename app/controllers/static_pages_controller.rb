@@ -7,5 +7,4 @@ class StaticPagesController < ApplicationController
     @shops = @q.result.page(params[:page]).per(PER_PAGE)
     @areas = Area.all
   end
-
 end
