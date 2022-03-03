@@ -1,24 +1,37 @@
-# README
+# FASHION-ONE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img width="1421" alt="スクリーンショット 2022-03-03 20 39 47" src="https://user-images.githubusercontent.com/68746979/156557864-a95a2eb0-d58c-43e7-a7f8-eaa0dc15796b.png">
 
-Things you may want to cover:
+## URL
 
-* Ruby version
+下記URLにて公開中です。
+https://fashion-one-app.herokuapp.com/
 
-* System dependencies
+## アプリの概要
 
-* Configuration
+都内エリアのアパレルショップを、様々な情報や口コミを参考にしながら検索できるアプリです。
 
-* Database creation
+* 都内にあるお店を様々な条件で検索できる
+* 行ったお店の口コミ投稿ができる
+* 気になるお店を保存済み機能で保存することができる
 
-* Database initialization
+## アプリの作成背景
 
-* How to run the test suite
+ファッションが好きな私は、上京して初めて服を買おうとした時に土地勘が掴めておらず、どの地域にユニクロやH&Mなどがあるのか分からなかったので、最初のお店探しが大変でした。
 
-* Services (job queues, cache servers, search engines, etc.)
+もし複数のブランドやセレクトショップをひとつのサイトで検索でき、都内のある地域だけに絞って検索することができれば、服好きの人、都内に上京したばかりの人、観光で東京を訪れた人は便利に感じるのではないかと思い、この悩みを解決しようと思い、アプリ開発に至りました。
 
-* Deployment instructions
+アパレル店舗といってもファストファッションからラグジュアリーブランドと、価格帯が大きいので、今回はユーザー人口が一番多い、ファストファッションやセレクトショップをジャンルメインのアプリにすることにしました。
 
-* ...
+## 使用技術
+
+* 言語：Ruby(3.0.0)
+* フレームワーク：Ruby on Rails(6.1.4.1)
+* フロントエンド：HTML&CSS/Bootstrap/JavaScript/jQuey
+* DB：PostgreSQL
+* インフラ：Heroku+AWS(S3)
+* ソースコード管理：Github
+* 開発環境：MacOS/Visual Studio Code
+
+
+
