@@ -1,6 +1,6 @@
 # FASHION-ONE
 
-<img width="1421" alt="スクリーンショット 2022-03-03 20 39 47" src="https://user-images.githubusercontent.com/68746979/156557864-a95a2eb0-d58c-43e7-a7f8-eaa0dc15796b.png">
+<img width="1411" alt="スクリーンショット 2022-03-03 22 22 19" src="https://user-images.githubusercontent.com/68746979/156573248-23980fb8-d49a-4aaa-9020-a57b4503dc7c.png">
 
 ## URL
 
@@ -23,6 +23,28 @@ https://fashion-one-app.herokuapp.com/
 
 アパレル店舗といってもファストファッションからラグジュアリーブランドと、価格帯が大きいので、今回はユーザー人口が一番多い、ファストファッションやセレクトショップをジャンルメインのアプリにすることにしました。
 
+
+## 機能一覧
+
+|  | 機能 |Gem |
+:---:|:---:|:---:|
+| 1 | ログイン・ログアウト機能 | Devise |
+| 2 | アカウント登録、マイページ編集機能 | Devise |
+| 3 | ゲストログイン機能	| Devise |
+| 4 | 検索機能 | Ransack |
+| 5 | 画像投稿機能　| carriewave |
+| 6 | ページネーション機能 | Kaminari |
+| 7 | 管理者画面機能 | ActiveAdmin |
+| 8 | レスポンシブデザイン機能 | Bootstrap |
+| 9 | 口コミ投稿機能	| x |
+| 10 | 保存済み機能(Ajax) | x |
+| 11 | フラッシュメッセージ機能 | x |
+
+
+## ER図
+
+<img width="947" alt="スクリーンショット 2022-03-03 23 19 09" src="https://user-images.githubusercontent.com/68746979/156582987-528d674f-bbf9-45fd-a995-c34110951e14.png">
+
 ## 使用技術
 
 * 言語：Ruby(3.0.0)
@@ -32,6 +54,3 @@ https://fashion-one-app.herokuapp.com/
 * インフラ：Heroku+AWS(S3)
 * ソースコード管理：Github
 * 開発環境：MacOS/Visual Studio Code
-
-
-
