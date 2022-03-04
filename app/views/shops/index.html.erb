@@ -1,7 +1,7 @@
 <div class="container">
   <div class="mx-auto" style="max-width: 80%" >
     <% if @shops.present? %>
-      <h3 class="text-center my-4"><%= @shops.length%>件ヒットしました。</h3>
+      <h3 class="text-center my-4"><%= @result.count%>件ヒットしました。</h3>
       <% @shops.each do |shop| %>
         <%= link_to shop do %>
           <div class="py-3 border-top ">
