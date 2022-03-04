@@ -54,3 +54,7 @@ https://fashion-one-app.herokuapp.com/
 * インフラ：Heroku+AWS(S3)
 * ソースコード管理：Github
 * 開発環境：MacOS/Visual Studio Code
+
+## 今後追加したい機能
+
+* AWS（VPC、EC2、RDS、S3、IAM、Route53、ACMを使用）へのデプロイ
