@@ -4,13 +4,13 @@
       <%= render "layouts/error_messages", model: f.object %>
       <h3 class="text-center font-weight-bold m-4">口コミ投稿フォーム</h3>
       <%= f.hidden_field :shop_id, value: shop.id %>
-      <div class="field">
+      <div class="field mb-3">
         <%= f.label :title, 'タイトル' %>
-        <%= f.text_field :title, class: "form-control" %>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください。" %>
       </div>
-      <!-- 評価 -->
-      <div class="field" id="score">
-        <%= f.label :score,'評価' %>
+      <div class="font-weight-bold">評価</div>
+      <div class="field mb-3" id="score">
+        <%= f.label :score, '評価' %>
         <%= f.hidden_field :score, id: :review_score %>
       </div>
       <script>
@@ -24,15 +24,14 @@
         half: false,
       });
       </script>
-      <div class="field">
+      <div class="field mb-3">
         <%= f.label :image, "画像" %><br />
         <%= f.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
       </div>
       <div class="field">
         <%= f.label :content, '口コミ内容 ', class:'col-form-label' %>
-        <%= f.text_area :content, class: "form-control", rows: "8" %>
+        <%= f.text_area :content, class: "form-control", rows: "8", placeholder: "口コミ内容を入力してください。" %>
       </div>
-      <!-- 確認ボタン -->
       <div class="field text-center">
         <%= f.submit '投稿する', class:"btn btn-success" %>
       </div>
