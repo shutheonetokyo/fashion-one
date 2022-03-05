@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   def index
     @q = Shop.ransack(params[:q])
     @shops = @q.result.page(params[:page]).page(params[:page]).per(PER_PAGE)
-    @result=@q.result(distinct: true)
+    @result = @q.result(distinct: true)
   end
 
   def show
