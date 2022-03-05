@@ -10,7 +10,7 @@ class Shop < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :reviewed_users, through: :reviews, source: :user
 
-  validates :name, presence: true, length: {maximum: 30}
+  validates :name, presence: true
   validates :area_id, presence: true
   validates :genre_id, presence: true
   validates :brand_id, presence: true
