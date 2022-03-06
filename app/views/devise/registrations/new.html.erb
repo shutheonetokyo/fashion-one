@@ -1,5 +1,5 @@
 <h3 class="font-weight-bold text-center mt-5">アカウント登録</h3>
-<div class="mx-auto" style="max-width: 70%" >
+<div class="mx-auto" style="max-width: 60%" >
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
@@ -16,7 +16,7 @@
     </div>
     <div class="field">
       <%= f.label :self_introduction, "自己紹介" %>
-      <%= f.text_area :self_introduction, autofocus: true, autocomplete: "self_introduction",class:"form-control", placeholder:"最大500文字" %>
+      <%= f.text_area :self_introduction, autofocus: true, autocomplete: "self_introduction",class:"form-control", placeholder:"最大500文字", rows:"5" %>
     </div>
     <div class="field">
       <%= f.label :password,class:"sign_up_title" %>
