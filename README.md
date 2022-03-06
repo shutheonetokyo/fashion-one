@@ -1,10 +1,11 @@
 # FASHION-ONE
 
-<img width="1411" alt="スクリーンショット 2022-03-03 22 22 19" src="https://user-images.githubusercontent.com/68746979/156573248-23980fb8-d49a-4aaa-9020-a57b4503dc7c.png">
+<img width="1422" alt="スクリーンショット 2022-03-06 15 12 33" src="https://user-images.githubusercontent.com/68746979/156911612-b18b46e9-6a5c-487d-8f39-e619f0983798.png">
 
 ## URL
 
 下記URLにて公開中です。
+
 https://fashion-one-app.herokuapp.com/
 
 ## アプリの概要
@@ -23,6 +24,66 @@ https://fashion-one-app.herokuapp.com/
 
 アパレル店舗といってもファストファッションからラグジュアリーブランドと、価格帯が大きいので、今回はユーザー人口が一番多い、ファストファッションやセレクトショップをジャンルメインのアプリにすることにしました。
 
+## アプリの使い方
+
+### お店の検索方法
+
+<br>
+
+* キーワード検索でお店を探すことができます。
+
+<br>
+
+![keyword-search](https://user-images.githubusercontent.com/68746979/156875727-0ed17962-4bbe-4c52-8758-f85b15b0f240.gif)
+
+<br>
+
+* エリアからお店を探すことができます。
+
+<br>
+
+![area-search](https://user-images.githubusercontent.com/68746979/156876574-9b5e658f-e153-47cd-a1fb-bada5d8f4b21.gif)
+
+<br>
+
+* ジャンルからお店を探すことができます。
+
+<br>
+
+![genre-search](https://user-images.githubusercontent.com/68746979/156876868-62750631-f003-40f6-9e16-119d9cb8c4ce.gif)
+
+<br>
+
+* ブランドからお店を探すことができます。
+
+<br>
+
+![brand-search](https://user-images.githubusercontent.com/68746979/156888825-488eb985-f83b-4426-93ca-4cd8cb229d3c.gif)
+
+<br>
+
+### 検索したお店を保存済みにすることができます。
+
+<br>
+
+![like](https://user-images.githubusercontent.com/68746979/156890693-4de8c118-4ec8-44bb-a268-7b60a8670342.gif)
+
+<br>
+
+### お店に対して口コミ投稿することができます。
+
+<br>
+
+![review2](https://user-images.githubusercontent.com/68746979/156910175-aa61d5be-a241-423d-bdd9-e3a0dadd1f64.gif)
+
+<br>
+
+### 保存済みしたお店、口コミ投稿したお店はマイページで確認できます。
+
+<br>
+
+![mypage](https://user-images.githubusercontent.com/68746979/156911748-cf926558-2078-4bcd-884a-f525b122a83e.gif)
+
 
 ## 機能一覧
 
@@ -30,15 +91,16 @@ https://fashion-one-app.herokuapp.com/
 :---:|:---:|:---:|
 | 1 | ログイン・ログアウト機能 | Devise |
 | 2 | アカウント登録、マイページ編集機能 | Devise |
-| 3 | ゲストログイン機能	| Devise |
-| 4 | 検索機能 | Ransack |
-| 5 | 画像投稿機能　| carriewave |
-| 6 | ページネーション機能 | Kaminari |
-| 7 | 管理者画面機能 | ActiveAdmin |
-| 8 | レスポンシブデザイン機能 | Bootstrap |
-| 9 | 口コミ投稿機能	| x |
-| 10 | 保存済み機能(Ajax) | x |
-| 11 | フラッシュメッセージ機能 | x |
+| 3 | アカウント削除機能 | Devise |
+| 4 | ゲストログイン機能	| Devise |
+| 5 | 検索機能 | Ransack |
+| 6 | 画像投稿機能　| carriewave |
+| 7 | ページネーション機能 | Kaminari |
+| 8 | 管理者画面機能 | ActiveAdmin |
+| 9 | レスポンシブデザイン機能 | Bootstrap |
+| 10 | 口コミ投稿機能	| x |
+| 11 | 保存済み機能(Ajax) | x |
+| 12 | フラッシュメッセージ機能 | x |
 
 
 ## ER図
@@ -58,3 +120,4 @@ https://fashion-one-app.herokuapp.com/
 ## 今後追加したい機能
 
 * AWS（VPC、EC2、RDS、S3、IAM、Route53、ACMを使用）へのデプロイ
+* テスト(Rspec)を記述
