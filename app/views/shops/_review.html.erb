@@ -28,8 +28,8 @@
           <p><%= review.score.to_f %></p>
         </div>
       </div>
-      <h1 class="border-top pt-2"><%= review.title %></h1>
-      <h3><%= review.content %></h3>
+      <h3 class="font-weight-bold border-bottom pt-4"><%= review.title %></h3>
+      <h5 class="py-4"><%= review.content %></h5>
       <div class="col-lg-3 mb-3 ml-2">
         <% if review.image? %>
           <%= image_tag review.image.url, class: "rounded", size: "200x200" %>

@@ -1,4 +1,4 @@
-<div class="edition-form">
+<div class="mx-auto" style="max-width: 60%" >
   <h2 class="edition-title">ユーザー設定</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -22,7 +22,7 @@
       </p>
     <div class="field">
       <%= f.label :self_introduction, "自己紹介" %>
-      <%= f.text_area :self_introduction, autofocus: true, autocomplete: "self_introduction",class:"form-control", placeholder:"最大500文字" %>
+      <%= f.text_area :self_introduction, autofocus: true, autocomplete: "self_introduction",class:"form-control", placeholder:"最大500文字",rows:"5" %>
     </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>

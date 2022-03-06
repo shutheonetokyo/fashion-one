@@ -123,6 +123,7 @@ footer {
     padding-top: 24px;
   }
 }
+
 /* 全体画面（フッターの余白を埋める） */
 
 body {
@@ -143,9 +144,7 @@ main {
 
 /* ユーザー編集画面 */
 
-.edition-form {
-  margin: 0 150px;
-}
+
 
 .edition-title {
   margin: 30px 0;
@@ -299,11 +298,13 @@ li {
 }
 
 /* タブの文字色変更 */
+
 .nav-pills .nav-link{
   color: #333333;
 }
 
 /* paginate */
+
 .pagination{
   margin: auto;
   width: 50%;
