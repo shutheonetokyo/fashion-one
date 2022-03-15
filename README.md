@@ -119,5 +119,5 @@ https://fashion-one-app.herokuapp.com/
 
 ## 今後追加したい機能
 
-* AWS（VPC、EC2、RDS、S3、IAM、Route53、ACMを使用）へのデプロイ
+* AWS（VPC、EC2、RDS、S3、IAM、Route53、ACMを使用）へのデプロイ(現在実装中)
 * テスト(Rspec)を記述
