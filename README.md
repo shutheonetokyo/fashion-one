@@ -6,7 +6,7 @@
 
 下記URLにて公開中です。
 
-https://fashion-one-app.herokuapp.com/
+https://fashion-one-app.com
 
 ## アプリの概要
 
@@ -113,7 +113,8 @@ https://fashion-one-app.herokuapp.com/
 * フレームワーク：Ruby on Rails(6.1.4.1)
 * フロントエンド：HTML&CSS/Bootstrap/JavaScript/jQuey
 * DB：PostgreSQL
-* インフラ：Heroku+AWS(S3)
+* インフラ：Heroku(Heroku Postgres,Papertrail,PointDNS)+AWS(S3)
+* ドメイン:お名前.com
 * ソースコード管理：Github
 * 開発環境：MacOS/Visual Studio Code
 
