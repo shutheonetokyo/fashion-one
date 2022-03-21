@@ -94,7 +94,7 @@ https://fashion-one-app.com
 | 3 | アカウント削除機能 | Devise |
 | 4 | ゲストログイン機能	| Devise |
 | 5 | 検索機能 | Ransack |
-| 6 | 画像投稿機能　| carriewave |
+| 6 | 画像投稿機能　| carrierwave |
 | 7 | ページネーション機能 | Kaminari |
 | 8 | 管理者画面機能 | ActiveAdmin |
 | 9 | レスポンシブデザイン機能 | Bootstrap |
